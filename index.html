@@ -380,7 +380,7 @@
     .plantas-thumb-item{position:relative}
     .plantas-thumb-item.active{border-color:var(--olive)}
     .plantas-thumb-item:hover{border-color:var(--sand)}
-    .thumb-lbl{position:absolute;bottom:0;left:0;right:0;background:rgba(74,93,58,0.88);color:#fff;font-size:0.62rem;font-weight:600;text-align:center;padding:3px 4px;letter-spacing:0.03em}
+    .thumb-lbl{position:absolute;bottom:0;left:0;right:0;background:rgba(74,93,58,0.92);color:#fff;font-size:0.58rem;font-weight:600;text-align:center;padding:4px 2px;letter-spacing:0.02em;line-height:1.2}
     .plantas-fullscreen-hint{text-align:center;margin-top:10px;font-size:0.75rem;color:var(--muted);display:flex;align-items:center;justify-content:center;gap:6px}
 
     @media(max-width:920px){
@@ -408,7 +408,7 @@
     }
     @media(max-width:640px){
       .nav-cta{display:none}
-      .areas-grid{grid-template-columns:1fr 1fr}
+      .areas-grid{grid-template-columns:1fr;gap:20px}
       .tipo-grid{grid-template-columns:1fr}
       .invest-grid{grid-template-columns:1fr}
       .pillar-grid{grid-template-columns:1fr}
@@ -883,21 +883,21 @@
         </div>
       </div>
       <div class="plantas-sidebar" id="plantasSidebar">
-        <div class="plantas-thumb-item active" onclick="setPlanta(0)"><img src="plantas/1.webp" alt="Planta 1" loading="lazy" /></div>
-        <div class="plantas-thumb-item" onclick="setPlanta(1)" title="Apto 209"><img src="plantas/2.webp" alt="Apto 209" loading="lazy" /><div class="thumb-lbl">209</div></div>
-        <div class="plantas-thumb-item" onclick="setPlanta(2)" title="Apto 301-302"><img src="plantas/3.webp" alt="Apto 301-302" loading="lazy" /><div class="thumb-lbl">301-302</div></div>
-        <div class="plantas-thumb-item" onclick="setPlanta(3)" title="Apto 303-304"><img src="plantas/4.webp" alt="Apto 303-304" loading="lazy" /><div class="thumb-lbl">303-304</div></div>
-        <div class="plantas-thumb-item" onclick="setPlanta(4)" title="Apto 305-310"><img src="plantas/5.webp" alt="Apto 305-310" loading="lazy" /><div class="thumb-lbl">305-310</div></div>
-        <div class="plantas-thumb-item" onclick="setPlanta(5)" title="Apto 312-313"><img src="plantas/6.webp" alt="Apto 312-313" loading="lazy" /><div class="thumb-lbl">312-313</div></div>
-        <div class="plantas-thumb-item" onclick="setPlanta(6)" title="Apto 316-320"><img src="plantas/7.webp" alt="Apto 316-320" loading="lazy" /><div class="thumb-lbl">316-320</div></div>
-        <div class="plantas-thumb-item" onclick="setPlanta(7)" title="Apto 512"><img src="plantas/8.webp" alt="Apto 512" loading="lazy" /><div class="thumb-lbl">512</div></div>
-        <div class="plantas-thumb-item" onclick="setPlanta(8)" title="Apto 612-613"><img src="plantas/9.webp" alt="Apto 612-613" loading="lazy" /><div class="thumb-lbl">612-613</div></div>
-        <div class="plantas-thumb-item" onclick="setPlanta(9)" title="Apto 701-702"><img src="plantas/10.webp" alt="Apto 701-702" loading="lazy" /><div class="thumb-lbl">701-702</div></div>
-        <div class="plantas-thumb-item" onclick="setPlanta(10)" title="Apto 712-713"><img src="plantas/11.webp" alt="Apto 712-713" loading="lazy" /><div class="thumb-lbl">712-713</div></div>
-        <div class="plantas-thumb-item" onclick="setPlanta(11)" title="Apto 801-802"><img src="plantas/12.webp" alt="Apto 801-802" loading="lazy" /><div class="thumb-lbl">801-802</div></div>
-        <div class="plantas-thumb-item" onclick="setPlanta(12)" title="Apto 808-810"><img src="plantas/13.webp" alt="Apto 808-810" loading="lazy" /><div class="thumb-lbl">808-810</div></div>
-        <div class="plantas-thumb-item" onclick="setPlanta(13)" title="Apto 901-905"><img src="plantas/14.webp" alt="Apto 901-905" loading="lazy" /><div class="thumb-lbl">901-905</div></div>
-        <div class="plantas-thumb-item" onclick="setPlanta(14)" title="Apto 906-910"><img src="plantas/15.webp" alt="Apto 906-910" loading="lazy" /><div class="thumb-lbl">906-910</div></div>
+        <div class="plantas-thumb-item active" onclick="setPlanta(0)" title="Apto 204-205"><img src="plantas/1.webp" alt="Apto 204-205" loading="lazy" /><div class="thumb-lbl">204-205 · Garden</div></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(1)" title="Apto 209"><img src="plantas/2.webp" alt="Apto 209" loading="lazy" /><div class="thumb-lbl">209 · 1S + 1D</div></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(2)" title="Apto 301-302"><img src="plantas/3.webp" alt="Apto 301-302" loading="lazy" /><div class="thumb-lbl">301-302 · 3S</div></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(3)" title="Apto 303-304"><img src="plantas/4.webp" alt="Apto 303-304" loading="lazy" /><div class="thumb-lbl">303-304 · 1S+1D</div></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(4)" title="Apto 305-310"><img src="plantas/5.webp" alt="Apto 305-310" loading="lazy" /><div class="thumb-lbl">305-310 · 1S+1D</div></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(5)" title="Apto 312-313"><img src="plantas/6.webp" alt="Apto 312-313" loading="lazy" /><div class="thumb-lbl">312-313 · 3S</div></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(6)" title="Apto 316-320"><img src="plantas/7.webp" alt="Apto 316-320" loading="lazy" /><div class="thumb-lbl">316-320 · 2S</div></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(7)" title="Apto 512"><img src="plantas/8.webp" alt="Apto 512" loading="lazy" /><div class="thumb-lbl">512 · Garden</div></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(8)" title="Apto 612-613"><img src="plantas/9.webp" alt="Apto 612-613" loading="lazy" /><div class="thumb-lbl">612-613 · Garden</div></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(9)" title="Apto 701-702"><img src="plantas/10.webp" alt="Apto 701-702" loading="lazy" /><div class="thumb-lbl">701-702 · 1S+2D</div></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(10)" title="Apto 712-713"><img src="plantas/11.webp" alt="Apto 712-713" loading="lazy" /><div class="thumb-lbl">712-713 · Garden</div></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(11)" title="Apto 801-802"><img src="plantas/12.webp" alt="Apto 801-802" loading="lazy" /><div class="thumb-lbl">801-802 · 2S</div></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(12)" title="Apto 808-810"><img src="plantas/13.webp" alt="Apto 808-810" loading="lazy" /><div class="thumb-lbl">808-810 · Garden</div></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(13)" title="Apto 901-905"><img src="plantas/14.webp" alt="Apto 901-905" loading="lazy" /><div class="thumb-lbl">901-905 · 3S/2S</div></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(14)" title="Apto 906-910"><img src="plantas/15.webp" alt="Apto 906-910" loading="lazy" /><div class="thumb-lbl">906-910 · 3S/1S+2D</div></div>
       </div>
     </div>
   </div>
