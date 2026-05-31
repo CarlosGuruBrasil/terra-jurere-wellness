@@ -101,7 +101,7 @@
     /* HERO VIDEO */
     .hero{position:relative;height:100vh;min-height:640px;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
     .hero-video{position:absolute;inset:0;z-index:0;overflow:hidden;background:#111}
-    .hero-video video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+    .hero-video iframe{position:absolute;top:50%;left:50%;width:115vw;height:64.68vw;min-height:115vh;min-width:204.45vh;transform:translate(-50%,-50%);pointer-events:none;border:none}
     .hero-video::after{content:'';position:absolute;inset:0;background:linear-gradient(160deg,rgba(20,26,14,0.78) 0%,rgba(74,93,58,0.5) 60%,rgba(20,18,12,0.82) 100%)}
     .hero-content{position:relative;z-index:2;max-width:840px;padding:0 5%}
     .eyebrow{display:inline-block;font-size:0.72rem;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold-light);padding:6px 18px;border:1px solid rgba(200,169,110,0.4);border-radius:50px;backdrop-filter:blur(6px);margin-bottom:20px}
@@ -480,9 +480,12 @@
 <!-- HERO — vídeo de fundo -->
 <section class="hero" id="inicio">
   <div class="hero-video">
-    <video autoplay muted loop playsinline poster="imagens/og-image.jpg">
-      <source src="hero-video.mp4" type="video/mp4">
-    </video>
+    <iframe
+      src="https://www.youtube.com/embed/pHsSgnI1EjY?autoplay=1&mute=1&loop=1&playlist=pHsSgnI1EjY&controls=0&disablekb=1&iv_load_policy=3&modestbranding=1&rel=0&playsinline=1"
+      allow="autoplay; encrypted-media"
+      allowfullscreen
+      title="Terrá Jurerê Wellness"
+    ></iframe>
   </div>
   <div class="hero-content">
     <span class="eyebrow">Jurerê · Florianópolis · Lançamento</span>
