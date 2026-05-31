@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terrá Jurerê Wellness | Viver Bem em Jurerê, Florianópolis</title>
+  <meta name="description" content="Terrá Jurerê Wellness — Apartamentos de alto padrão em Jurerê, Florianópolis. Conceito wellness, arquitetura autoral e qualidade de vida incomparável." />
+  <meta name="keywords" content="Apartamento em Jurerê, Imóvel em Jurerê, Lançamento Jurerê, Terrá Jurerê Wellness, apartamento Florianópolis, imóvel alto padrão Jurerê" />
+  <meta property="og:title" content="Terrá Jurerê Wellness | Um novo jeito de viver em Jurerê" />
+  <meta property="og:description" content="Arquitetura autoral, bem-estar, natureza e exclusividade em um dos endereços mais desejados de Florianópolis." />
+
+  <!-- META PIXEL — substitua SEU_PIXEL_ID -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','SEU_PIXEL_ID');
+    fbq('track','PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=SEU_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+  <style>
+    :root {
+      --olive:      #4A5D3A;
+      --olive-d:    #3A4D2C;
+      --olive-pale: #E8EDE4;
+      --sand:       #C4A882;
+      --sand-light: #EDE3D6;
+      --gold:       #C8A96E;
+      --gold-light: #E8D5A8;
+      --cream:      #F9F7F2;
+      --white:      #FFFFFF;
+      --dark:       #1C1C1C;
+      --text:       #3A3A3A;
+      --muted:      #7A7A7A;
+      --border:     rgba(74,93,58,0.15);
+      --glass:      rgba(255,255,255,0.6);
+      --r-sm:       8px;
+      --r-md:       16px;
+      --r-lg:       28px;
+      --shadow:     0 8px 40px rgba(74,93,58,0.12);
+      --serif:      'Playfair Display',Georgia,serif;
+      --sans:       'Inter',sans-serif;
+      --ease:       0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;font-size:16px}
+    body{font-family:var(--sans);background:var(--cream);color:var(--text);overflow-x:hidden;line-height:1.7}
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+
+    /* NAVBAR */
+    .nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 5%;height:72px;display:flex;align-items:center;justify-content:space-between;transition:background var(--ease),box-shadow var(--ease)}
+    .nav.s{background:rgba(255,255,255,0.96);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 1px 0 rgba(0,0,0,0.07),0 4px 24px rgba(0,0,0,0.06)}
+    /* Brand / Logo */
+    .nav-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .nav-brand-logo{height:38px;width:auto;object-fit:contain;filter:brightness(0) invert(1);transition:filter var(--ease)}
+    .nav.s .nav-brand-logo{filter:brightness(0)}
+    .nav-brand-text{display:flex;flex-direction:column;line-height:1;gap:3px}
+    .nav-brand-main{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:#fff;letter-spacing:0.01em;transition:color var(--ease)}
+    .nav.s .nav-brand-main{color:var(--olive)}
+    .nav-brand-sub{font-size:0.6rem;font-weight:600;letter-spacing:0.26em;text-transform:uppercase;color:rgba(255,255,255,0.55);transition:color var(--ease)}
+    .nav.s .nav-brand-sub{color:var(--gold)}
+    /* Nav links */
+    .nav-links{display:flex;align-items:center;gap:26px}
+    .nav-link{font-size:0.74rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.78);position:relative;transition:color var(--ease)}
+    .nav-link::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transition:transform var(--ease)}
+    .nav-link:hover{color:#fff}.nav-link:hover::after{transform:scaleX(1)}
+    .nav.s .nav-link{color:var(--text)}.nav.s .nav-link:hover{color:var(--olive)}
+    /* Right group */
+    .nav-right{display:flex;align-items:center;gap:12px}
+    .nav-cta{display:inline-flex;align-items:center;gap:7px;background:var(--gold);color:#fff;font-size:0.76rem;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;padding:9px 20px;border-radius:50px;transition:background var(--ease),transform var(--ease),box-shadow var(--ease);white-space:nowrap}
+    .nav-cta:hover{background:var(--olive);transform:translateY(-1px);box-shadow:0 6px 20px rgba(74,93,58,0.3)}
+    /* Hamburger */
+    .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
+    .nav-hamburger span{display:block;width:24px;height:2px;background:#fff;border-radius:2px;transition:all var(--ease)}
+    .nav.s .nav-hamburger span{background:var(--dark)}
+    .nav-hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+    .nav-hamburger.open span:nth-child(2){opacity:0;transform:translateX(-6px)}
+    .nav-hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+    /* Mobile menu panel */
+    .nav-mobile{position:fixed;top:72px;left:0;right:0;z-index:999;background:rgba(255,255,255,0.98);backdrop-filter:blur(20px);border-top:1px solid var(--border);padding:8px 5% 24px;box-shadow:0 12px 40px rgba(0,0,0,0.1);transform:translateY(-8px);opacity:0;pointer-events:none;transition:transform var(--ease),opacity var(--ease);display:block}
+    .nav-mobile.open{transform:translateY(0);opacity:1;pointer-events:all}
+    .nav-mobile-link{display:flex;align-items:center;justify-content:space-between;font-size:0.95rem;font-weight:500;color:var(--text);padding:13px 0;border-bottom:1px solid var(--border)}
+    .nav-mobile-link::after{content:'›';color:var(--muted);font-size:1.1rem}
+    .nav-mobile-cta{display:block;margin-top:18px;text-align:center;background:linear-gradient(135deg,var(--gold),#A8843E);color:#fff;font-size:0.82rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:14px;border-radius:50px;box-shadow:0 4px 18px rgba(200,169,110,0.35)}
+
+    /* HERO VIDEO */
+    .hero{position:relative;height:100vh;min-height:640px;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+    .hero-video{position:absolute;inset:0;z-index:0;overflow:hidden;background:#111}
+    .hero-video iframe{position:absolute;top:50%;left:50%;width:100vw;height:56.25vw;min-height:100vh;min-width:177.78vh;transform:translate(-50%,-50%);pointer-events:none;border:none}
+    .hero-video::after{content:'';position:absolute;inset:0;background:linear-gradient(160deg,rgba(20,26,14,0.78) 0%,rgba(74,93,58,0.5) 60%,rgba(20,18,12,0.82) 100%)}
+    .hero-content{position:relative;z-index:2;max-width:840px;padding:0 5%}
+    .eyebrow{display:inline-block;font-size:0.72rem;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold-light);padding:6px 18px;border:1px solid rgba(200,169,110,0.4);border-radius:50px;backdrop-filter:blur(6px);margin-bottom:20px}
+    .hero-title{font-family:var(--serif);font-size:clamp(2.8rem,6.5vw,5.2rem);font-weight:700;color:#fff;line-height:1.1;margin-bottom:14px;letter-spacing:-0.01em}
+    .hero-title em{color:var(--gold-light);font-style:italic}
+    .hero-sub{font-family:var(--serif);font-size:clamp(1.1rem,2.5vw,1.5rem);font-style:italic;color:rgba(255,255,255,0.8);margin-bottom:16px}
+    .hero-desc{font-size:1rem;color:rgba(255,255,255,0.7);max-width:580px;margin:0 auto 36px;line-height:1.8}
+    .btn-gold{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--gold) 0%,#A8843E 100%);color:#fff;font-size:0.88rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:17px 36px;border-radius:50px;box-shadow:0 8px 32px rgba(200,169,110,0.45);transition:transform var(--ease),box-shadow var(--ease);border:none;cursor:pointer;font-family:var(--sans)}
+    .btn-gold:hover{transform:translateY(-3px);box-shadow:0 16px 48px rgba(200,169,110,0.55)}
+    .hero-scroll{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,0.55);font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:6px;animation:bob 2s ease-in-out infinite}
+    .hero-scroll::after{content:'';width:1px;height:36px;background:linear-gradient(to bottom,rgba(255,255,255,0.5),transparent)}
+    @keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(7px)}}
+
+    /* SECTION BASE */
+    section{padding:100px 5%}
+    .container{max-width:1240px;margin:0 auto}
+    .sec-eye{display:inline-block;font-size:0.72rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--olive);margin-bottom:12px}
+    .sec-title{font-family:var(--serif);font-size:clamp(2rem,4vw,3.2rem);font-weight:700;line-height:1.18;color:var(--dark);margin-bottom:18px}
+    .sec-title em{color:var(--olive);font-style:italic}
+    .sec-text{font-size:1rem;color:var(--muted);line-height:1.85;max-width:640px}
+    .divider{width:56px;height:2px;background:linear-gradient(90deg,var(--gold),transparent);border-radius:2px;margin:20px 0}
+
+    /* GALLERY STRIP */
+    .gallery-strip{background:var(--dark);padding:80px 0;overflow:hidden}
+    .gallery-strip-head{text-align:center;padding:0 5% 48px}
+    .gallery-strip-head .sec-eye{color:var(--gold)}
+    .gallery-strip-head .sec-title{color:#fff}
+    .gallery-track{display:flex;gap:12px;padding:0 5%;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;cursor:grab}
+    .gallery-track::-webkit-scrollbar{display:none}
+    .gallery-track.dragging{cursor:grabbing}
+    .gallery-item{flex:0 0 auto;width:340px;height:440px;border-radius:var(--r-md);overflow:hidden;scroll-snap-align:start;position:relative;cursor:pointer}
+    .gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease}
+    .gallery-item:hover img{transform:scale(1.06)}
+    .gallery-item-label{position:absolute;bottom:0;left:0;right:0;padding:20px 16px 16px;background:linear-gradient(to top,rgba(0,0,0,0.75),transparent);color:#fff;font-size:0.82rem;font-weight:500;letter-spacing:0.04em;opacity:0;transition:opacity 0.3s}
+    .gallery-item:hover .gallery-item-label{opacity:1}
+    .gallery-dots{display:flex;justify-content:center;gap:6px;margin-top:28px;padding:0 5%}
+    .gallery-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.25);cursor:pointer;transition:background 0.3s,width 0.3s}
+    .gallery-dot.active{background:var(--gold);width:20px;border-radius:3px}
+
+    /* LIGHTBOX */
+    .lightbox{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.95);align-items:center;justify-content:center;flex-direction:column}
+    .lightbox.open{display:flex}
+    .lightbox-img{max-width:92vw;max-height:85vh;object-fit:contain;border-radius:var(--r-sm);box-shadow:0 0 80px rgba(0,0,0,0.6)}
+    .lightbox-caption{color:rgba(255,255,255,0.65);font-size:0.85rem;margin-top:14px;letter-spacing:0.04em}
+    .lightbox-close{position:absolute;top:20px;right:24px;color:#fff;font-size:2rem;cursor:pointer;line-height:1;opacity:0.7;transition:opacity 0.2s}
+    .lightbox-close:hover{opacity:1}
+    .lightbox-prev,.lightbox-next{position:absolute;top:50%;transform:translateY(-50%);color:#fff;font-size:2.5rem;cursor:pointer;opacity:0.6;transition:opacity 0.2s;padding:0 20px}
+    .lightbox-prev:hover,.lightbox-next:hover{opacity:1}
+    .lightbox-prev{left:0}.lightbox-next{right:0}
+
+    /* NOVO LUXO */
+    .novo-luxo{background:var(--white)}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+    .img-frame{border-radius:var(--r-lg);overflow:hidden;position:relative}
+    .img-frame img{width:100%;height:100%;object-fit:cover;transition:transform 0.8s ease}
+    .img-frame:hover img{transform:scale(1.04)}
+    .img-badge{position:absolute;bottom:20px;left:20px;background:var(--glass);backdrop-filter:blur(14px);border:1px solid var(--border);border-radius:var(--r-md);padding:14px 18px}
+    .img-badge strong{display:block;font-family:var(--serif);font-size:1.2rem;color:var(--olive)}
+    .img-badge span{font-size:0.75rem;color:var(--muted)}
+    .checks{list-style:none;margin-top:24px;display:flex;flex-direction:column;gap:11px}
+    .checks li{display:flex;align-items:center;gap:11px;font-size:0.96rem}
+    .checks li::before{content:'';width:20px;height:20px;min-width:20px;border-radius:50%;background:var(--olive-pale) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8l3.5 3.5L13 5' stroke='%234A5D3A' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/14px no-repeat}
+
+    /* CONCEITO WELLNESS */
+    .conceito{background:linear-gradient(135deg,var(--olive) 0%,var(--olive-d) 100%);position:relative;overflow:hidden}
+    .conceito::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='30' cy='30' r='1' fill='rgba(255,255,255,0.05)'/%3E%3C/svg%3E")}
+    .conceito .sec-eye{color:var(--gold-light)}
+    .conceito .sec-title{color:#fff}
+    .conceito .sec-text{color:rgba(255,255,255,0.75);max-width:100%}
+    .conceito .divider{background:linear-gradient(90deg,var(--gold-light),transparent)}
+    .pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+    .pillar{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.13);border-radius:var(--r-md);padding:28px 24px;transition:background var(--ease),transform var(--ease)}
+    .pillar:hover{background:rgba(255,255,255,0.13);transform:translateY(-4px)}
+    .pillar-icon{font-size:2rem;margin-bottom:12px}
+    .pillar-name{font-family:var(--serif);font-size:1.1rem;font-weight:600;color:#fff;margin-bottom:6px}
+    .pillar-desc{font-size:0.86rem;color:rgba(255,255,255,0.68);line-height:1.65}
+
+    /* AREAS WELLNESS com fotos */
+    .areas{background:var(--cream)}
+    .areas-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:52px}
+    .area-card{border-radius:var(--r-md);overflow:hidden;position:relative;aspect-ratio:3/4;cursor:pointer}
+    .area-card img{width:100%;height:100%;object-fit:cover;transition:transform 0.7s ease}
+    .area-card:hover img{transform:scale(1.08)}
+    .area-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(20,30,14,0.82) 0%,rgba(20,30,14,0.15) 50%,transparent 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:20px 18px}
+    .area-icon-badge{width:40px;height:40px;background:rgba(200,169,110,0.85);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;margin-bottom:10px;backdrop-filter:blur(4px)}
+    .area-name{font-family:var(--serif);font-size:1rem;font-weight:600;color:#fff;margin-bottom:4px}
+    .area-desc{font-size:0.78rem;color:rgba(255,255,255,0.72);line-height:1.5;max-height:0;overflow:hidden;transition:max-height 0.4s ease}
+    .area-card:hover .area-desc{max-height:60px}
+
+    /* VIDEO SHOWCASE */
+    .videos{background:var(--dark);padding:100px 5%}
+    .videos .sec-eye{color:var(--gold)}
+    .videos .sec-title{color:#fff}
+    .videos .divider{background:linear-gradient(90deg,var(--gold),transparent)}
+    .video-player-wrap{margin-top:48px;display:grid;grid-template-columns:1fr 280px;gap:16px;align-items:start}
+    .video-main{border-radius:var(--r-md);overflow:hidden;background:#000;aspect-ratio:16/9;position:relative}
+    .video-main video{width:100%;height:100%;object-fit:cover}
+    .video-thumbs{display:flex;flex-direction:column;gap:10px}
+    .v-thumb{border-radius:var(--r-sm);overflow:hidden;cursor:pointer;position:relative;aspect-ratio:16/9;border:2px solid transparent;transition:border-color var(--ease)}
+    .v-thumb.active{border-color:var(--gold)}
+    .v-thumb video,.v-thumb img{width:100%;height:100%;object-fit:cover;pointer-events:none}
+    .v-thumb-label{position:absolute;bottom:6px;left:8px;color:#fff;font-size:0.72rem;font-weight:600;text-shadow:0 1px 4px rgba(0,0,0,0.8)}
+    .v-play-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:32px;height:32px;background:rgba(200,169,110,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;pointer-events:none}
+    .v-play-icon::after{content:'';border-left:10px solid #fff;border-top:6px solid transparent;border-bottom:6px solid transparent;margin-left:2px}
+
+    /* FACHADA / ARQUITETURA */
+    .arquitetura{background:var(--sand-light)}
+    .fachada-hero{width:100%;border-radius:var(--r-lg);overflow:hidden;margin-bottom:20px;position:relative;aspect-ratio:16/7}
+    .fachada-hero img{width:100%;height:100%;object-fit:cover;cursor:pointer;transition:transform 0.8s ease}
+    .fachada-hero:hover img{transform:scale(1.02)}
+    .fachada-mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .fachada-mini{border-radius:var(--r-md);overflow:hidden;aspect-ratio:4/3;cursor:pointer}
+    .fachada-mini img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease}
+    .fachada-mini:hover img{transform:scale(1.06)}
+
+    /* TIPOLOGIAS */
+    .tipologias{background:var(--cream)}
+    .tipo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+    .tipo-card{background:var(--white);border-radius:var(--r-md);overflow:hidden;border:1px solid var(--border);transition:transform var(--ease),box-shadow var(--ease)}
+    .tipo-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+    .tipo-img{aspect-ratio:4/3;overflow:hidden}
+    .tipo-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.7s ease}
+    .tipo-card:hover .tipo-img img{transform:scale(1.05)}
+    .tipo-info{padding:20px}
+    .tipo-tag{display:inline-block;font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--olive);background:var(--olive-pale);padding:3px 10px;border-radius:50px;margin-bottom:8px}
+    .tipo-title{font-family:var(--serif);font-size:1.1rem;font-weight:600;color:var(--dark);margin-bottom:4px}
+    .tipo-desc{font-size:0.83rem;color:var(--muted)}
+    .tipo-note{text-align:center;margin-top:32px;padding:22px;background:var(--olive-pale);border-radius:var(--r-md);font-family:var(--serif);font-size:1.1rem;color:var(--olive);font-style:italic}
+
+    /* LOCALIZAÇÃO */
+    .localizacao{background:var(--white)}
+    .loc-map{border-radius:var(--r-lg);overflow:hidden;aspect-ratio:16/7;box-shadow:var(--shadow)}
+    .loc-map iframe{width:100%;height:100%;border:none}
+    .loc-benefits{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
+    .loc-item{display:flex;align-items:center;gap:10px;padding:13px 15px;background:var(--cream);border-radius:var(--r-sm);border:1px solid var(--border);font-size:0.87rem;font-weight:500}
+    .loc-item span:first-child{font-size:1.2rem;min-width:24px}
+
+    /* DEPOIMENTOS */
+    .depos{background:var(--white)}
+    .depo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+    .depo{background:var(--cream);border:1px solid var(--border);border-radius:var(--r-md);padding:30px 26px;position:relative;transition:transform var(--ease),box-shadow var(--ease)}
+    .depo:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+    .depo::before{content:'\201C';font-family:var(--serif);font-size:5rem;line-height:0.6;color:var(--olive-pale);position:absolute;top:18px;left:18px}
+    .depo-text{font-size:0.93rem;line-height:1.75;color:var(--text);padding-top:22px;margin-bottom:22px;position:relative;z-index:1}
+    .depo-author{display:flex;align-items:center;gap:12px}
+    .depo-av{width:44px;height:44px;border-radius:50%;object-fit:cover;background:var(--olive-pale)}
+    .depo-name{font-weight:600;font-size:0.9rem;color:var(--dark)}
+    .depo-role{font-size:0.77rem;color:var(--muted)}
+    .stars{color:var(--gold);font-size:0.85rem;margin-bottom:2px}
+
+    /* INVESTIMENTO */
+    .invest{background:linear-gradient(135deg,#1A1E14 0%,#2D3A22 100%);color:#fff;position:relative;overflow:hidden}
+    .invest::before{content:'';position:absolute;top:-50%;right:-10%;width:500px;height:500px;background:radial-gradient(circle,rgba(200,169,110,0.1) 0%,transparent 70%);pointer-events:none}
+    .invest .sec-eye{color:var(--gold)}
+    .invest .sec-title{color:#fff}
+    .invest .divider{background:linear-gradient(90deg,var(--gold),transparent)}
+    .invest-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+    .invest-card{padding:34px 26px;border:1px solid rgba(200,169,110,0.18);border-radius:var(--r-md);background:rgba(200,169,110,0.05);transition:background var(--ease),border-color var(--ease)}
+    .invest-card:hover{background:rgba(200,169,110,0.1);border-color:rgba(200,169,110,0.35)}
+    .invest-num{font-family:var(--serif);font-size:3.2rem;font-weight:700;color:var(--gold);line-height:1;margin-bottom:8px}
+    .invest-label{font-size:0.88rem;color:rgba(255,255,255,0.62);line-height:1.55}
+    .invest-quote{text-align:center;font-family:var(--serif);font-size:1.4rem;font-style:italic;color:var(--gold-light);margin-top:48px;opacity:0.88}
+
+    /* EMPRESAS */
+    .empresas{background:var(--sand-light);text-align:center}
+    .empresas .sec-text{margin:0 auto;text-align:center}
+    .emp-logos{display:flex;align-items:center;justify-content:center;gap:60px;margin-top:48px;flex-wrap:wrap}
+    .emp-box{width:140px;height:70px;background:#fff;border-radius:var(--r-md);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;padding:14px;box-shadow:var(--shadow)}
+    .emp-box span{font-family:var(--serif);font-size:1.15rem;font-weight:700;color:var(--olive)}
+    .emp-caption{font-size:0.78rem;color:var(--muted);letter-spacing:0.08em;text-transform:uppercase;margin-top:8px}
+
+    /* FORMULÁRIO */
+    .cta-form{background:linear-gradient(135deg,var(--olive) 0%,var(--olive-d) 100%)}
+    .cta-form .sec-eye{color:var(--gold-light)}
+    .cta-form .sec-title{color:#fff}
+    .cta-form .sec-text{color:rgba(255,255,255,0.72)}
+    .cta-form .divider{background:linear-gradient(90deg,var(--gold-light),transparent)}
+    .form-wrap{background:var(--glass);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,0.3);border-radius:var(--r-lg);padding:40px}
+    .form-h{font-family:var(--serif);font-size:1.5rem;color:var(--olive);margin-bottom:4px}
+    .form-sub{font-size:0.84rem;color:var(--muted);margin-bottom:26px}
+    .fg{margin-bottom:14px}
+    .fg label{display:block;font-size:0.77rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+    .fg input,.fg select{width:100%;padding:12px 15px;background:#fff;border:1px solid var(--border);border-radius:var(--r-sm);font-family:var(--sans);font-size:0.94rem;color:var(--dark);outline:none;transition:border-color var(--ease),box-shadow var(--ease);appearance:none}
+    .fg input:focus,.fg select:focus{border-color:var(--olive);box-shadow:0 0 0 3px rgba(74,93,58,0.12)}
+    .form-btn{width:100%;padding:15px;background:linear-gradient(135deg,var(--gold) 0%,#A8843E 100%);border:none;border-radius:var(--r-sm);color:#fff;font-family:var(--sans);font-size:0.88rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:transform var(--ease),box-shadow var(--ease);margin-top:6px}
+    .form-btn:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(200,169,110,0.5)}
+    .form-legal{text-align:center;font-size:0.71rem;color:var(--muted);margin-top:12px}
+    .success{display:none;text-align:center;padding:28px}
+    .success .s-icon{font-size:3rem;margin-bottom:14px}
+    .success h3{font-family:var(--serif);font-size:1.4rem;color:var(--olive);margin-bottom:6px}
+    .success p{font-size:0.88rem;color:var(--muted)}
+
+    /* FOOTER */
+    footer{background:var(--dark);color:rgba(255,255,255,0.55);padding:44px 5%;text-align:center}
+    .ft-logo{font-family:var(--serif);font-size:1.6rem;color:#fff;margin-bottom:6px}
+    .ft-tag{font-size:0.84rem;color:var(--gold);margin-bottom:22px}
+    .ft-contact{margin-bottom:20px;font-size:0.85rem;color:rgba(255,255,255,0.5);line-height:2}
+    .ft-contact strong{color:rgba(255,255,255,0.8);display:block;margin-bottom:2px}
+    .ft-contact a{color:var(--gold);transition:opacity 0.3s}
+    .ft-contact a:hover{opacity:0.7}
+    .ft-links{display:flex;justify-content:center;gap:24px;margin-bottom:22px;flex-wrap:wrap}
+    .ft-links a{font-size:0.81rem;color:rgba(255,255,255,0.45);transition:color 0.3s}
+    .ft-links a:hover{color:var(--gold)}
+    .ft-copy{font-size:0.74rem;color:rgba(255,255,255,0.25)}
+
+    /* WHATSAPP */
+    .wpp{position:fixed;bottom:28px;right:28px;z-index:999;width:60px;height:60px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(37,211,102,0.42);transition:transform var(--ease);animation:pulse-wpp 3s ease-in-out infinite}
+    .wpp:hover{transform:scale(1.12)}
+    .wpp svg{width:30px;height:30px;fill:#fff}
+    .wpp-tip{position:absolute;right:70px;top:50%;transform:translateY(-50%);background:var(--dark);color:#fff;font-size:0.79rem;white-space:nowrap;padding:6px 13px;border-radius:50px;opacity:0;pointer-events:none;transition:opacity 0.3s}
+    .wpp:hover .wpp-tip{opacity:1}
+    @keyframes pulse-wpp{0%,100%{box-shadow:0 6px 24px rgba(37,211,102,0.42)}50%{box-shadow:0 6px 36px rgba(37,211,102,0.65),0 0 0 10px rgba(37,211,102,0.08)}}
+
+    /* MOBILE STICKY */
+    .mob-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:998;padding:10px 12px;background:var(--olive);grid-template-columns:1fr 1fr;gap:8px}
+    .mob-btn{display:flex;align-items:center;justify-content:center;gap:5px;padding:12px;border-radius:var(--r-sm);font-size:0.78rem;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:#fff}
+    .mob-btn.f{background:var(--gold)}.mob-btn.w{background:#25D366}
+
+    /* PDF BANNER */
+    .pdf-banner{position:relative;overflow:hidden;background:var(--dark)}
+    .pdf-banner img{width:100%;max-height:92vh;object-fit:cover;object-position:center;display:block;opacity:0.92}
+    .pdf-banner-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(20,26,14,0.15) 0%,rgba(20,26,14,0.72) 100%);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:56px 5% 60px;text-align:center;pointer-events:none}
+    .pdf-banner-eye{display:inline-block;font-size:0.72rem;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold-light);padding:5px 16px;border:1px solid rgba(200,169,110,0.4);border-radius:50px;margin-bottom:14px}
+    .pdf-banner-title{font-family:var(--serif);font-size:clamp(2rem,4.5vw,3.6rem);font-weight:700;color:#fff;line-height:1.15;margin-bottom:16px}
+    .pdf-banner-title em{color:var(--gold-light);font-style:italic}
+    .pdf-banner-cta{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--gold),#A8843E);color:#fff;font-size:0.84rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:14px 32px;border-radius:50px;pointer-events:all;transition:transform var(--ease),box-shadow var(--ease)}
+    .pdf-banner-cta:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(200,169,110,0.5)}
+
+    /* VÍDEOS — Card Grid */
+    .videos{background:var(--dark);padding:100px 5%}
+    .videos .sec-eye{color:var(--gold)}
+    .videos .sec-title{color:#fff}
+    .videos .divider{background:linear-gradient(90deg,var(--gold),transparent)}
+    .vid-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:48px}
+    .vid-card{border-radius:var(--r-md);overflow:hidden;position:relative;aspect-ratio:16/9;cursor:pointer;background:#0a0a0a}
+    .vid-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s ease}
+    .vid-card:hover img{transform:scale(1.05)}
+    .vid-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.3);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;transition:background var(--ease)}
+    .vid-card:hover .vid-overlay{background:rgba(0,0,0,0.5)}
+    .vid-play-btn{width:54px;height:54px;background:rgba(200,169,110,0.92);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:transform var(--ease),background var(--ease);flex-shrink:0}
+    .vid-card:hover .vid-play-btn{transform:scale(1.18);background:var(--gold)}
+    .vid-play-btn::after{content:'';border-left:18px solid #fff;border-top:10px solid transparent;border-bottom:10px solid transparent;margin-left:4px}
+    .vid-label{color:#fff;font-size:0.8rem;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;text-shadow:0 1px 6px rgba(0,0,0,0.8);text-align:center;padding:0 10px}
+    /* Video Modal */
+    .vid-modal{display:none;position:fixed;inset:0;z-index:9998;background:rgba(0,0,0,0.96);align-items:center;justify-content:center}
+    .vid-modal.open{display:flex}
+    .vid-modal-inner{position:relative;width:min(92vw,1100px)}
+    .vid-modal-inner.short{width:min(92vw,440px)}
+    .vid-modal-inner iframe{width:100%;aspect-ratio:16/9;border-radius:var(--r-md);display:block;border:none}
+    .vid-modal-inner.short iframe{aspect-ratio:9/16}
+    .vid-modal-close{position:absolute;top:-44px;right:0;color:#fff;font-size:2rem;cursor:pointer;opacity:0.7;line-height:1;transition:opacity 0.2s}
+    .vid-modal-close:hover{opacity:1}
+
+    /* PLANTAS */
+    .plantas{background:var(--cream);padding:100px 5%}
+    .plantas .sec-eye{color:var(--olive)}
+    .plantas-viewer{margin-top:48px;display:grid;grid-template-columns:1fr 300px;gap:20px;align-items:start}
+    .plantas-main-wrap{position:relative;background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;display:flex;align-items:center;justify-content:center;min-height:460px;cursor:pointer}
+    .plantas-main-wrap img{max-width:100%;max-height:520px;object-fit:contain;padding:16px;transition:opacity 0.25s}
+    .plantas-main-wrap img.fade{opacity:0}
+    .plantas-nav-arrows{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;padding:0 12px;pointer-events:none}
+    .plantas-arr{width:40px;height:40px;background:rgba(74,93,58,0.85);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;pointer-events:all;border:none;color:#fff;font-size:1.2rem;transition:background var(--ease),transform var(--ease)}
+    .plantas-arr:hover{background:var(--olive);transform:scale(1.08)}
+    .plantas-counter{text-align:center;margin-top:14px;font-size:0.82rem;color:var(--muted);letter-spacing:0.06em}
+    .plantas-sidebar{display:flex;flex-direction:column;gap:8px;max-height:560px;overflow-y:auto;padding-right:4px}
+    .plantas-sidebar::-webkit-scrollbar{width:4px}
+    .plantas-sidebar::-webkit-scrollbar-track{background:transparent}
+    .plantas-sidebar::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
+    .plantas-thumb-item{border-radius:var(--r-sm);overflow:hidden;cursor:pointer;border:2px solid transparent;transition:border-color var(--ease),opacity var(--ease);aspect-ratio:4/3;background:var(--white)}
+    .plantas-thumb-item img{width:100%;height:100%;object-fit:contain;padding:4px}
+    .plantas-thumb-item.active{border-color:var(--olive)}
+    .plantas-thumb-item:hover{border-color:var(--sand)}
+    .plantas-fullscreen-hint{text-align:center;margin-top:10px;font-size:0.75rem;color:var(--muted);display:flex;align-items:center;justify-content:center;gap:6px}
+
+    @media(max-width:920px){
+      .nav-links{display:none}
+      .nav-hamburger{display:flex}
+    }
+    @media(max-width:1100px){
+      .areas-grid{grid-template-columns:repeat(2,1fr)}
+      .vid-grid{grid-template-columns:repeat(2,1fr)}
+      .plantas-viewer{grid-template-columns:1fr}
+      .plantas-sidebar{flex-direction:row;max-height:none;overflow-x:auto;overflow-y:visible;padding-right:0;padding-bottom:4px}
+      .plantas-thumb-item{min-width:100px;flex:0 0 100px}
+    }
+    @media(max-width:900px){
+      section{padding:72px 5%}
+      .two-col{grid-template-columns:1fr;gap:40px}
+      .pillar-grid{grid-template-columns:1fr 1fr}
+      .tipo-grid{grid-template-columns:1fr 1fr}
+      .invest-grid{grid-template-columns:1fr 1fr}
+      .depo-grid{grid-template-columns:1fr}
+      .fachada-mini-grid{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:640px){
+      .areas-grid{grid-template-columns:1fr 1fr}
+      .tipo-grid{grid-template-columns:1fr}
+      .invest-grid{grid-template-columns:1fr}
+      .pillar-grid{grid-template-columns:1fr}
+      .vid-grid{grid-template-columns:1fr}
+      .gallery-item{width:280px;height:360px}
+      .loc-benefits{grid-template-columns:1fr}
+      .fachada-mini-grid{grid-template-columns:1fr}
+      .wpp{display:none}
+      .mob-bar{display:grid}
+      body{padding-bottom:68px}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="nav" id="nav">
+  <!-- Brand -->
+  <a href="#inicio" class="nav-brand">
+    <img src="LOGO%20CR%C3%89DITO%20REAL%20JURERE.png.png" alt="Crédito Real Jurerê" class="nav-brand-logo" />
+    <div class="nav-brand-text">
+      <span class="nav-brand-main">Terrá Jurerê</span>
+      <span class="nav-brand-sub">Wellness · Florianópolis</span>
+    </div>
+  </a>
+
+  <!-- Links desktop -->
+  <div class="nav-links">
+    <a href="#conceito" class="nav-link">Conceito</a>
+    <a href="#areas" class="nav-link">Áreas</a>
+    <a href="#videos" class="nav-link">Vídeos</a>
+    <a href="#plantas" class="nav-link">Plantas</a>
+    <a href="#localizacao" class="nav-link">Localização</a>
+  </div>
+
+  <!-- Right: CTA + Hamburger -->
+  <div class="nav-right">
+    <a href="#formulario" class="nav-cta" onclick="pixel('Lead',{content_name:'CTA',content_category:'navbar'})">
+      Receber Material
+    </a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<div class="nav-mobile" id="navMobile">
+  <a href="#conceito" class="nav-mobile-link" onclick="closeMob()">Conceito Wellness</a>
+  <a href="#areas" class="nav-mobile-link" onclick="closeMob()">Áreas &amp; Infraestrutura</a>
+  <a href="#videos" class="nav-mobile-link" onclick="closeMob()">Vídeos</a>
+  <a href="#plantas" class="nav-mobile-link" onclick="closeMob()">Plantas</a>
+  <a href="#tipologias" class="nav-mobile-link" onclick="closeMob()">Tipologias</a>
+  <a href="#localizacao" class="nav-mobile-link" onclick="closeMob()">Localização</a>
+  <a href="#formulario" class="nav-mobile-cta" onclick="closeMob();pixel('Lead',{content_name:'CTA',content_category:'mobile-menu'})">
+    👉 Receber Material Completo
+  </a>
+</div>
+
+<!-- HERO — vídeo de fundo -->
+<section class="hero" id="inicio">
+  <div class="hero-video">
+    <iframe
+      src="https://www.youtube-nocookie.com/embed/pHsSgnI1EjY?autoplay=1&mute=1&loop=1&playlist=pHsSgnI1EjY&controls=0&disablekb=1&iv_load_policy=3&modestbranding=1&rel=0&playsinline=1"
+      allow="autoplay; encrypted-media"
+      allowfullscreen
+      title="Terrá Jurerê Wellness"
+    ></iframe>
+  </div>
+  <div class="hero-content">
+    <span class="eyebrow">Jurerê · Florianópolis · Lançamento</span>
+    <h1 class="hero-title">Terrá Jurerê<br><em>Wellness</em></h1>
+    <p class="hero-sub">Um novo jeito de viver em Jurerê</p>
+    <p class="hero-desc">Arquitetura autoral, bem-estar, natureza e exclusividade em um dos endereços mais desejados de Florianópolis.</p>
+    <a href="#formulario" class="btn-gold" onclick="pixel('Lead',{content_name:'CTA',content_category:'hero'})">
+      Quero Receber o Material Completo
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+  <div class="hero-scroll">Conheça</div>
+</section>
+
+<!-- GALERIA IMERSIVA -->
+<div class="gallery-strip" id="galeria">
+  <div class="gallery-strip-head" data-aos="fade-up">
+    <span class="sec-eye" style="color:var(--gold)">Galeria</span>
+    <h2 class="sec-title" style="color:#fff">O empreendimento em <em style="color:var(--gold-light)">imagens reais</em></h2>
+  </div>
+  <div class="gallery-track" id="galleryTrack">
+    <div class="gallery-item" data-idx="0" data-src="Imagens%20projeto/KOTA_PLA_TER_FACHADA%20AEREA_4K.png" data-label="Fachada Aérea 4K">
+      <img src="Imagens%20projeto/KOTA_PLA_TER_FACHADA%20AEREA_4K.png" alt="Fachada aérea" loading="lazy" />
+      <div class="gallery-item-label">Fachada Aérea 4K</div>
+    </div>
+    <div class="gallery-item" data-idx="1" data-src="Imagens%20projeto/KOTA_PLA_TER_FACHADA.jpg" data-label="Fachada Principal">
+      <img src="Imagens%20projeto/KOTA_PLA_TER_FACHADA.jpg" alt="Fachada" loading="lazy" />
+      <div class="gallery-item-label">Fachada Principal</div>
+    </div>
+    <div class="gallery-item" data-idx="2" data-src="Imagens%20projeto/KOTA_PLA_TER_FACHADA%20NOTURNA_V00.jpeg" data-label="Fachada Noturna">
+      <img src="Imagens%20projeto/KOTA_PLA_TER_FACHADA%20NOTURNA_V00.jpeg" alt="Fachada noturna" loading="lazy" />
+      <div class="gallery-item-label">Fachada Noturna</div>
+    </div>
+    <div class="gallery-item" data-idx="3" data-src="Imagens%20projeto/KOTA_PLA_TER_FACHADA%20DETALHE.jpg" data-label="Detalhe Fachada">
+      <img src="Imagens%20projeto/KOTA_PLA_TER_FACHADA%20DETALHE.jpg" alt="Detalhe fachada" loading="lazy" />
+      <div class="gallery-item-label">Detalhe Fachada</div>
+    </div>
+    <div class="gallery-item" data-idx="4" data-src="Imagens%20projeto/KOTA_PLA_TER_HALL.jpeg" data-label="Hall de Entrada">
+      <img src="Imagens%20projeto/KOTA_PLA_TER_HALL.jpeg" alt="Hall" loading="lazy" />
+      <div class="gallery-item-label">Hall de Entrada</div>
+    </div>
+    <div class="gallery-item" data-idx="5" data-src="Imagens%20projeto/KOTA_PLA_TER_PISCINA.jpeg" data-label="Piscina Climatizada">
+      <img src="Imagens%20projeto/KOTA_PLA_TER_PISCINA.jpeg" alt="Piscina" loading="lazy" />
+      <div class="gallery-item-label">Piscina Climatizada</div>
+    </div>
+    <div class="gallery-item" data-idx="6" data-src="Imagens%20projeto/KOTA_PLA_TER_SPA_V00.jpeg" data-label="Spa Wellness">
+      <img src="Imagens%20projeto/KOTA_PLA_TER_SPA_V00.jpeg" alt="Spa" loading="lazy" />
+      <div class="gallery-item-label">Spa Wellness</div>
+    </div>
+    <div class="gallery-item" data-idx="7" data-src="Imagens%20projeto/KOTA_PLA_TER_SAUNA.jpeg" data-label="Sauna">
+      <img src="Imagens%20projeto/KOTA_PLA_TER_SAUNA.jpeg" alt="Sauna" loading="lazy" />
+      <div class="gallery-item-label">Sauna</div>
+    </div>
+    <div class="gallery-item" data-idx="8" data-src="Imagens%20projeto/KOTA_PLA_TER_FITNESS.png" data-label="Espaço Movimento">
+      <img src="Imagens%20projeto/KOTA_PLA_TER_FITNESS.png" alt="Fitness" loading="lazy" />
+      <div class="gallery-item-label">Espaço Movimento</div>
+    </div>
+    <div class="gallery-item" data-idx="9" data-src="Imagens%20projeto/KOTA_PLA_TER_COWORKING.jpeg" data-label="Work Lounge">
+      <img src="Imagens%20projeto/KOTA_PLA_TER_COWORKING.jpeg" alt="Coworking" loading="lazy" />
+      <div class="gallery-item-label">Work Lounge</div>
+    </div>
+    <div class="gallery-item" data-idx="10" data-src="Imagens%20projeto/KOTA_PLA_TER_HIDRO.jpeg" data-label="Hidromassagem">
+      <img src="Imagens%20projeto/KOTA_PLA_TER_HIDRO.jpeg" alt="Hidro" loading="lazy" />
+      <div class="gallery-item-label">Hidromassagem</div>
+    </div>
+    <div class="gallery-item" data-idx="11" data-src="Imagens%20projeto/KOTA_PLA_TER_PISCINA%20INFANTIL.jpeg" data-label="Piscina Infantil">
+      <img src="Imagens%20projeto/KOTA_PLA_TER_PISCINA%20INFANTIL.jpeg" alt="Piscina infantil" loading="lazy" />
+      <div class="gallery-item-label">Piscina Infantil</div>
+    </div>
+    <div class="gallery-item" data-idx="12" data-src="Imagens%20projeto/KOTA_PLA_TER_KIDS_V00.jpeg" data-label="Kids Club">
+      <img src="Imagens%20projeto/KOTA_PLA_TER_KIDS_V00.jpeg" alt="Kids" loading="lazy" />
+      <div class="gallery-item-label">Kids Club</div>
+    </div>
+    <div class="gallery-item" data-idx="13" data-src="Imagens%20projeto/KOTA_PLA_TER_SALAO%20DE%20FESTAS%2001_V00.jpeg" data-label="Salão de Festas">
+      <img src="Imagens%20projeto/KOTA_PLA_TER_SALAO%20DE%20FESTAS%2001_V00.jpeg" alt="Salão" loading="lazy" />
+      <div class="gallery-item-label">Salão de Festas</div>
+    </div>
+    <div class="gallery-item" data-idx="14" data-src="Imagens%20projeto/KOTA_PLA_TER_EMBASAMENTO%2001_V00.jpeg" data-label="Embasamento">
+      <img src="Imagens%20projeto/KOTA_PLA_TER_EMBASAMENTO%2001_V00.jpeg" alt="Embasamento" loading="lazy" />
+      <div class="gallery-item-label">Embasamento</div>
+    </div>
+  </div>
+  <div class="gallery-dots" id="galleryDots"></div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close" id="lbClose">&times;</span>
+  <span class="lightbox-prev" id="lbPrev">&#8249;</span>
+  <img class="lightbox-img" id="lbImg" src="" alt="" />
+  <span class="lightbox-next" id="lbNext">&#8250;</span>
+  <div class="lightbox-caption" id="lbCaption"></div>
+</div>
+
+<!-- PDF BANNER — terra-jurere-1.pdf.png -->
+<div class="pdf-banner" data-aos="fade-up" data-aos-duration="1000">
+  <img src="terra-jurere-1.pdf.png" alt="Terrá Jurerê Wellness — Conceito do Empreendimento" />
+  <div class="pdf-banner-overlay">
+    <span class="pdf-banner-eye">Lançamento Exclusivo</span>
+    <h2 class="pdf-banner-title">Uma nova referência<br>em <em>bem-estar e arquitetura</em></h2>
+    <a href="#formulario" class="pdf-banner-cta" onclick="pixel('Lead',{content_name:'CTA',content_category:'pdf-banner'})">
+      Quero Receber o Material Completo
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</div>
+
+<!-- O NOVO LUXO -->
+<section class="novo-luxo" id="sobre">
+  <div class="container">
+    <div class="two-col">
+      <div data-aos="fade-right" data-aos-duration="900">
+        <span class="sec-eye">O Novo Luxo</span>
+        <h2 class="sec-title">Nem todo lugar foi feito<br>para você <em>viver melhor</em>.<br>O Terrá foi.</h2>
+        <div class="divider"></div>
+        <p class="sec-text">Em um mundo cada vez mais acelerado, surge um novo desejo: viver com mais equilíbrio, respirar melhor e desacelerar sem abrir mão da localização, da sofisticação e da conveniência.</p>
+        <p class="sec-text" style="margin-top:14px">O Terrá Jurerê Wellness nasce para quem entende que qualidade de vida não é um diferencial. É prioridade.</p>
+        <ul class="checks">
+          <li>Saúde física e bem-estar emocional integrados</li>
+          <li>Contato permanente com a natureza</li>
+          <li>Arquitetura autoral contemporânea</li>
+          <li>Localização premium em Jurerê</li>
+          <li>Experiências exclusivas para um novo estilo de vida</li>
+        </ul>
+      </div>
+      <div data-aos="fade-left" data-aos-duration="900" data-aos-delay="150">
+        <div class="img-frame" style="aspect-ratio:4/5">
+          <img src="Imagens%20projeto/KOTA_PLA_TER_EMBASAMENTO%2001_V00.jpeg" alt="Terrá Jurerê — área de convivência" />
+          <div class="img-badge">
+            <strong>Terrá</strong>
+            <span>Jurerê Wellness</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONCEITO WELLNESS -->
+<section class="conceito" id="conceito">
+  <div class="container">
+    <div style="text-align:center;max-width:700px;margin:0 auto" data-aos="fade-up">
+      <span class="sec-eye">Conceito</span>
+      <h2 class="sec-title">Mais do que morar.<br><em style="color:var(--gold-light)">Viver bem todos os dias.</em></h2>
+      <div class="divider" style="margin:22px auto"></div>
+      <p class="sec-text" style="margin:0 auto;text-align:center">O Terrá foi desenvolvido sob um conceito wellness que integra arquitetura, paisagismo e experiências voltadas para o bem-estar. Cada espaço foi projetado para estimular uma rotina mais saudável, equilibrada e conectada com o que realmente importa.</p>
+    </div>
+    <div class="pillar-grid">
+      <div class="pillar" data-aos="fade-up" data-aos-delay="0"><div class="pillar-icon">🌿</div><div class="pillar-name">Saúde Física</div><div class="pillar-desc">Estruturas de movimento projetadas para estimular hábitos saudáveis no cotidiano.</div></div>
+      <div class="pillar" data-aos="fade-up" data-aos-delay="80"><div class="pillar-icon">🧠</div><div class="pillar-name">Bem-Estar Emocional</div><div class="pillar-desc">Espaços de silêncio, contemplação e reconexão com o que realmente importa.</div></div>
+      <div class="pillar" data-aos="fade-up" data-aos-delay="160"><div class="pillar-icon">🌱</div><div class="pillar-name">Contato com a Natureza</div><div class="pillar-desc">Paisagismo integrado à arquitetura criando ambiente vivo e reconfortante.</div></div>
+      <div class="pillar" data-aos="fade-up" data-aos-delay="240"><div class="pillar-icon">✨</div><div class="pillar-name">Qualidade de Vida</div><div class="pillar-desc">Cada detalhe concebido para elevar a experiência diária a um novo patamar.</div></div>
+      <div class="pillar" data-aos="fade-up" data-aos-delay="320"><div class="pillar-icon">🛋️</div><div class="pillar-name">Conforto Diário</div><div class="pillar-desc">Tecnologia, design e funcionalidade que simplificam e qualificam cada momento.</div></div>
+      <div class="pillar" data-aos="fade-up" data-aos-delay="400"><div class="pillar-icon">🏆</div><div class="pillar-name">Experiências Exclusivas</div><div class="pillar-desc">Ambientes pensados para criar memórias e vivências que vão além do comum.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ÁREAS WELLNESS — fotos reais -->
+<section class="areas" id="areas">
+  <div class="container">
+    <div style="text-align:center;max-width:660px;margin:0 auto" data-aos="fade-up">
+      <span class="sec-eye">Infraestrutura</span>
+      <h2 class="sec-title">Um ecossistema completo de <em>qualidade de vida</em></h2>
+      <div class="divider" style="margin:22px auto"></div>
+      <p class="sec-text" style="margin:0 auto;text-align:center">Muito além das áreas de lazer tradicionais — ambientes planejados para relaxamento, movimento, convivência e conexão.</p>
+    </div>
+    <div class="areas-grid">
+      <div class="area-card" data-aos="fade-up" data-aos-delay="0" onclick="openLb(4,'Hall de Entrada')">
+        <img src="Imagens%20projeto/KOTA_PLA_TER_HALL.jpeg" alt="Hall" loading="lazy" />
+        <div class="area-overlay">
+          <div class="area-icon-badge">🏛️</div>
+          <div class="area-name">Hall de Entrada</div>
+          <div class="area-desc">Recepção sofisticada que marca a chegada ao seu novo lar.</div>
+        </div>
+      </div>
+      <div class="area-card" data-aos="fade-up" data-aos-delay="60" onclick="openLb(5,'Piscina Climatizada')">
+        <img src="Imagens%20projeto/KOTA_PLA_TER_PISCINA.jpeg" alt="Piscina" loading="lazy" />
+        <div class="area-overlay">
+          <div class="area-icon-badge">🏊</div>
+          <div class="area-name">Piscina Climatizada</div>
+          <div class="area-desc">Conforto em todas as estações do ano.</div>
+        </div>
+      </div>
+      <div class="area-card" data-aos="fade-up" data-aos-delay="120" onclick="openLb(6,'Spa Wellness')">
+        <img src="Imagens%20projeto/KOTA_PLA_TER_SPA_V00.jpeg" alt="Spa" loading="lazy" />
+        <div class="area-overlay">
+          <div class="area-icon-badge">♨️</div>
+          <div class="area-name">Spa Wellness</div>
+          <div class="area-desc">Relaxamento e recuperação para corpo e mente.</div>
+        </div>
+      </div>
+      <div class="area-card" data-aos="fade-up" data-aos-delay="180" onclick="openLb(7,'Sauna')">
+        <img src="Imagens%20projeto/KOTA_PLA_TER_SAUNA.jpeg" alt="Sauna" loading="lazy" />
+        <div class="area-overlay">
+          <div class="area-icon-badge">🔥</div>
+          <div class="area-name">Sauna</div>
+          <div class="area-desc">Bem-estar e relaxamento profundo.</div>
+        </div>
+      </div>
+      <div class="area-card" data-aos="fade-up" data-aos-delay="240" onclick="openLb(8,'Espaço Movimento')">
+        <img src="Imagens%20projeto/KOTA_PLA_TER_FITNESS.png" alt="Fitness" loading="lazy" />
+        <div class="area-overlay">
+          <div class="area-icon-badge">🏋️</div>
+          <div class="area-name">Espaço Movimento</div>
+          <div class="area-desc">Fitness completo para uma rotina ativa.</div>
+        </div>
+      </div>
+      <div class="area-card" data-aos="fade-up" data-aos-delay="300" onclick="openLb(9,'Work Lounge')">
+        <img src="Imagens%20projeto/KOTA_PLA_TER_COWORKING.jpeg" alt="Coworking" loading="lazy" />
+        <div class="area-overlay">
+          <div class="area-icon-badge">💼</div>
+          <div class="area-name">Work Lounge</div>
+          <div class="area-desc">Produtividade com conforto e design.</div>
+        </div>
+      </div>
+      <div class="area-card" data-aos="fade-up" data-aos-delay="360" onclick="openLb(10,'Hidromassagem')">
+        <img src="Imagens%20projeto/KOTA_PLA_TER_HIDRO.jpeg" alt="Hidro" loading="lazy" />
+        <div class="area-overlay">
+          <div class="area-icon-badge">🌊</div>
+          <div class="area-name">Hidromassagem</div>
+          <div class="area-desc">Recuperação e relaxamento muscular.</div>
+        </div>
+      </div>
+      <div class="area-card" data-aos="fade-up" data-aos-delay="420" onclick="openLb(12,'Kids Club')">
+        <img src="Imagens%20projeto/KOTA_PLA_TER_KIDS_V00.jpeg" alt="Kids" loading="lazy" />
+        <div class="area-overlay">
+          <div class="area-icon-badge">👧</div>
+          <div class="area-name">Kids Club</div>
+          <div class="area-desc">Diversão e segurança para as crianças.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VÍDEOS -->
+<section class="videos" id="videos">
+  <div class="container">
+    <div data-aos="fade-up">
+      <span class="sec-eye">Experiência Visual</span>
+      <h2 class="sec-title" style="color:#fff">Veja o Terrá <em style="color:var(--gold-light)">em movimento</em></h2>
+      <div class="divider"></div>
+      <p style="color:rgba(255,255,255,0.6);font-size:0.95rem;margin-top:-4px">Clique em qualquer vídeo para assistir</p>
+    </div>
+    <div class="vid-grid">
+      <div class="vid-card" data-aos="fade-up" data-aos-delay="0" onclick="openVid('Yisa6fsJnKQ',true)">
+        <img src="https://img.youtube.com/vi/Yisa6fsJnKQ/hqdefault.jpg" alt="Vista do Empreendimento 01" loading="lazy" />
+        <div class="vid-overlay">
+          <div class="vid-play-btn"></div>
+          <span class="vid-label">Vista do Empreendimento · 01</span>
+        </div>
+      </div>
+      <div class="vid-card" data-aos="fade-up" data-aos-delay="80" onclick="openVid('q2KtQOzn59A',true)">
+        <img src="https://img.youtube.com/vi/q2KtQOzn59A/hqdefault.jpg" alt="Vista do Empreendimento 02" loading="lazy" />
+        <div class="vid-overlay">
+          <div class="vid-play-btn"></div>
+          <span class="vid-label">Vista do Empreendimento · 02</span>
+        </div>
+      </div>
+      <div class="vid-card" data-aos="fade-up" data-aos-delay="160" onclick="openVid('n8RTviySMjI',true)">
+        <img src="https://img.youtube.com/vi/n8RTviySMjI/hqdefault.jpg" alt="Vista do Empreendimento 03" loading="lazy" />
+        <div class="vid-overlay">
+          <div class="vid-play-btn"></div>
+          <span class="vid-label">Vista do Empreendimento · 03</span>
+        </div>
+      </div>
+      <div class="vid-card" data-aos="fade-up" data-aos-delay="240" onclick="openVid('q1-xaV1hhQU',true)">
+        <img src="https://img.youtube.com/vi/q1-xaV1hhQU/hqdefault.jpg" alt="Vista do Empreendimento 04" loading="lazy" />
+        <div class="vid-overlay">
+          <div class="vid-play-btn"></div>
+          <span class="vid-label">Vista do Empreendimento · 04</span>
+        </div>
+      </div>
+      <div class="vid-card" data-aos="fade-up" data-aos-delay="320" onclick="openVid('2ZItTLDkD9A',true)">
+        <img src="https://img.youtube.com/vi/2ZItTLDkD9A/hqdefault.jpg" alt="Lojas Terrá" loading="lazy" />
+        <div class="vid-overlay">
+          <div class="vid-play-btn"></div>
+          <span class="vid-label">Lojas Terrá</span>
+        </div>
+      </div>
+      <div class="vid-card" data-aos="fade-up" data-aos-delay="400" onclick="openVid('S2f0fITAW2s',false)">
+        <img src="https://img.youtube.com/vi/S2f0fITAW2s/hqdefault.jpg" alt="Terrá Detalhes" loading="lazy" />
+        <div class="vid-overlay">
+          <div class="vid-play-btn"></div>
+          <span class="vid-label">Terrá · Detalhes</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO MODAL -->
+<div class="vid-modal" id="vidModal">
+  <div class="vid-modal-inner" id="vidModalInner">
+    <span class="vid-modal-close" onclick="closeVid()">&times;</span>
+    <iframe id="modalIframe" src="" allow="autoplay; encrypted-media" allowfullscreen title="Vídeo Terrá Jurerê"></iframe>
+  </div>
+</div>
+
+<!-- ARQUITETURA -->
+<section class="arquitetura" id="arquitetura">
+  <div class="container">
+    <div class="two-col">
+      <div data-aos="fade-right" data-aos-duration="900">
+        <span class="sec-eye">Arquitetura Autoral</span>
+        <h2 class="sec-title">Uma arquitetura que <em>respira com você</em></h2>
+        <div class="divider"></div>
+        <p class="sec-text">Assinado pelo escritório de André Fornari, o Terrá apresenta uma linguagem contemporânea marcada pelo equilíbrio entre estética, funcionalidade e permanência.</p>
+        <p class="sec-text" style="margin-top:14px">As fachadas integradas ao paisagismo, a valorização da iluminação natural e os ambientes amplos criam uma experiência que vai além da beleza — é uma arquitetura pensada para permanecer desejada por muitos anos.</p>
+        <div style="margin-top:26px;padding:18px 22px;background:var(--glass);backdrop-filter:blur(14px);border:1px solid var(--border);border-radius:var(--r-md)">
+          <strong style="display:block;font-family:var(--serif);font-size:1.1rem;color:var(--olive);margin-bottom:4px">André Fornari Arquitetura</strong>
+          <span style="font-size:0.82rem;color:var(--muted)">Escritório responsável pelo projeto arquitetônico</span>
+        </div>
+      </div>
+      <div data-aos="fade-left" data-aos-duration="900" data-aos-delay="150">
+        <div class="fachada-hero" onclick="openLbSrc('Imagens%20projeto/KOTA_PLA_TER_FACHADA%20AEREA_4K.png','Fachada Aérea 4K')">
+          <img src="Imagens%20projeto/KOTA_PLA_TER_FACHADA%20AEREA_4K.png" alt="Fachada aérea 4K" />
+        </div>
+        <div class="fachada-mini-grid">
+          <div class="fachada-mini" onclick="openLbSrc('Imagens%20projeto/KOTA_PLA_TER_FACHADA.jpg','Fachada Principal')">
+            <img src="Imagens%20projeto/KOTA_PLA_TER_FACHADA.jpg" alt="Fachada" loading="lazy" />
+          </div>
+          <div class="fachada-mini" onclick="openLbSrc('Imagens%20projeto/KOTA_PLA_TER_FACHADA%20NOTURNA_V00.jpeg','Fachada Noturna')">
+            <img src="Imagens%20projeto/KOTA_PLA_TER_FACHADA%20NOTURNA_V00.jpeg" alt="Fachada noturna" loading="lazy" />
+          </div>
+          <div class="fachada-mini" onclick="openLbSrc('Imagens%20projeto/KOTA_PLA_TER_FACHADA%20DETALHE.jpg','Detalhe Fachada')">
+            <img src="Imagens%20projeto/KOTA_PLA_TER_FACHADA%20DETALHE.jpg" alt="Detalhe fachada" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIPOLOGIAS -->
+<section class="tipologias" id="tipologias">
+  <div class="container">
+    <div style="text-align:center;max-width:660px;margin:0 auto" data-aos="fade-up">
+      <span class="sec-eye">Tipologias</span>
+      <h2 class="sec-title">Espaços que acompanham <em>seu estilo de vida</em></h2>
+      <div class="divider" style="margin:22px auto"></div>
+      <p class="sec-text" style="margin:0 auto;text-align:center">Plantas de 47m² até mais de 327m² de área total — opções para diferentes momentos e estilos de vida.</p>
+    </div>
+    <div class="tipo-grid">
+      <div class="tipo-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="tipo-img"><img src="Imagens%20projeto/KOTA_PLA_TER_APTO%201D.jpeg" alt="Planta 1 dormitório" loading="lazy" /></div>
+        <div class="tipo-info">
+          <span class="tipo-tag">1 Dormitório</span>
+          <div class="tipo-title">Apartamento 1D</div>
+          <div class="tipo-desc">Prático, funcional e sofisticado para um estilo de vida contemporâneo.</div>
+        </div>
+      </div>
+      <div class="tipo-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="tipo-img"><img src="Imagens%20projeto/KOTA_PLA_TER_APTO%201D%20GARDEN.jpeg" alt="Garden" loading="lazy" /></div>
+        <div class="tipo-info">
+          <span class="tipo-tag">Garden</span>
+          <div class="tipo-title">Apartamento Garden</div>
+          <div class="tipo-desc">Exclusividade com jardim privativo integrado à natureza.</div>
+        </div>
+      </div>
+      <div class="tipo-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="tipo-img"><img src="Imagens%20projeto/KOTA_PLA_TER_APTO%203D_V00.jpeg" alt="3 dormitórios" loading="lazy" /></div>
+        <div class="tipo-info">
+          <span class="tipo-tag">3 Suítes</span>
+          <div class="tipo-title">Apartamento 3 Suítes</div>
+          <div class="tipo-desc">Amplitude, conforto e requinte para toda a família.</div>
+        </div>
+      </div>
+    </div>
+    <div class="tipo-note" data-aos="fade-up">Plantas de aproximadamente 47m² até mais de 327m² de área total</div>
+  </div>
+</section>
+
+<!-- PLANTAS -->
+<section class="plantas" id="plantas">
+  <div class="container">
+    <div style="text-align:center;max-width:660px;margin:0 auto" data-aos="fade-up">
+      <span class="sec-eye">Plantas</span>
+      <h2 class="sec-title">Conheça cada <em>detalhe do seu espaço</em></h2>
+      <div class="divider" style="margin:22px auto"></div>
+      <p class="sec-text" style="margin:0 auto;text-align:center">Explore as plantas do Terrá Jurerê Wellness — da implantação aos pavimentos tipo, com opções que vão de 47m² a mais de 327m².</p>
+    </div>
+    <div class="plantas-viewer" data-aos="fade-up" data-aos-delay="100">
+      <div>
+        <div class="plantas-main-wrap" onclick="openLbSrc(plantasData[plantaIdx],'Planta — Terrá Jurerê Wellness')">
+          <img id="plantaMainImg" src="PLANTAS%20TERR%C3%81/1.jpg" alt="Planta" />
+          <div class="plantas-nav-arrows">
+            <button class="plantas-arr" onclick="event.stopPropagation();navPlanta(-1)">&#8249;</button>
+            <button class="plantas-arr" onclick="event.stopPropagation();navPlanta(1)">&#8250;</button>
+          </div>
+        </div>
+        <div class="plantas-counter" id="plantaCounter">1 / 15</div>
+        <div class="plantas-fullscreen-hint">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg>
+          Clique na planta para ampliar
+        </div>
+      </div>
+      <div class="plantas-sidebar" id="plantasSidebar">
+        <div class="plantas-thumb-item active" onclick="setPlanta(0)"><img src="PLANTAS%20TERR%C3%81/1.jpg" alt="Planta 1" loading="lazy" /></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(1)"><img src="PLANTAS%20TERR%C3%81/2.jpg" alt="Planta 2" loading="lazy" /></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(2)"><img src="PLANTAS%20TERR%C3%81/3.jpg" alt="Planta 3" loading="lazy" /></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(3)"><img src="PLANTAS%20TERR%C3%81/4.jpg" alt="Planta 4" loading="lazy" /></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(4)"><img src="PLANTAS%20TERR%C3%81/5.jpg" alt="Planta 5" loading="lazy" /></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(5)"><img src="PLANTAS%20TERR%C3%81/6.jpg" alt="Planta 6" loading="lazy" /></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(6)"><img src="PLANTAS%20TERR%C3%81/7.jpg" alt="Planta 7" loading="lazy" /></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(7)"><img src="PLANTAS%20TERR%C3%81/8.jpg" alt="Planta 8" loading="lazy" /></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(8)"><img src="PLANTAS%20TERR%C3%81/9.jpg" alt="Planta 9" loading="lazy" /></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(9)"><img src="PLANTAS%20TERR%C3%81/10.jpg" alt="Planta 10" loading="lazy" /></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(10)"><img src="PLANTAS%20TERR%C3%81/11.jpg" alt="Planta 11" loading="lazy" /></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(11)"><img src="PLANTAS%20TERR%C3%81/12.jpg" alt="Planta 12" loading="lazy" /></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(12)"><img src="PLANTAS%20TERR%C3%81/13.jpg" alt="Planta 13" loading="lazy" /></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(13)"><img src="PLANTAS%20TERR%C3%81/14.jpg" alt="Planta 14" loading="lazy" /></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(14)"><img src="PLANTAS%20TERR%C3%81/15.jpg" alt="Planta 15" loading="lazy" /></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INVESTIMENTO -->
+<section class="invest" id="investimento">
+  <div class="container">
+    <div style="text-align:center;max-width:700px;margin:0 auto" data-aos="fade-up">
+      <span class="sec-eye">Investimento</span>
+      <h2 class="sec-title">Um patrimônio pensado <em style="color:var(--gold)">para o futuro</em></h2>
+      <div class="divider" style="margin:22px auto"></div>
+      <p class="sec-text" style="color:rgba(255,255,255,0.7);margin:0 auto;text-align:center">Sua localização estratégica, arquitetura autoral, conceito wellness e gestão especializada criam um empreendimento com elevado potencial de valorização.</p>
+    </div>
+    <div class="invest-grid">
+      <div class="invest-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="invest-num">1°</div>
+        <div class="invest-label">Bairro mais valorizado de Florianópolis — Jurerê Internacional</div>
+      </div>
+      <div class="invest-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="invest-num">+15%</div>
+        <div class="invest-label">Valorização média anual do m² em Jurerê nos últimos ciclos imobiliários</div>
+      </div>
+      <div class="invest-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="invest-num">100%</div>
+        <div class="invest-label">Conceito wellness integrado à arquitetura, paisagismo e infraestrutura</div>
+      </div>
+    </div>
+    <p class="invest-quote" data-aos="fade-up">"Mais do que adquirir um imóvel — você investe em qualidade de vida e patrimônio."</p>
+  </div>
+</section>
+
+<!-- LOCALIZAÇÃO -->
+<section class="localizacao" id="localizacao">
+  <div class="container">
+    <div class="two-col">
+      <div data-aos="fade-right">
+        <span class="sec-eye">Localização</span>
+        <h2 class="sec-title">Viva o melhor de <em>Jurerê</em></h2>
+        <div class="divider"></div>
+        <p class="sec-text">O Terrá está em Jurerê, um dos bairros mais valorizados e desejados de Florianópolis. Mas sua proposta vai além da localização.</p>
+        <div class="loc-benefits">
+          <div class="loc-item"><span>🏖️</span><span>Próximo da praia</span></div>
+          <div class="loc-item"><span>🌳</span><span>Natureza permanente</span></div>
+          <div class="loc-item"><span>🏪</span><span>Infraestrutura completa</span></div>
+          <div class="loc-item"><span>🔒</span><span>Alta segurança</span></div>
+          <div class="loc-item"><span>🚗</span><span>Mobilidade privilegiada</span></div>
+          <div class="loc-item"><span>📈</span><span>Alta valorização</span></div>
+        </div>
+      </div>
+      <div data-aos="fade-left" data-aos-delay="150">
+        <div class="loc-map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3536.2!2d-48.5400!3d-27.4650!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x952386e7c07c1ab7%3A0xf43fb5cb5d4ac5e5!2sJurer%C3%AA%2C%20Florian%C3%B3polis%20-%20SC!5e0!3m2!1spt-BR!2sbr!4v1700000000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Jurerê, Florianópolis"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section class="depos">
+  <div class="container">
+    <div style="text-align:center;max-width:600px;margin:0 auto" data-aos="fade-up">
+      <span class="sec-eye">Depoimentos</span>
+      <h2 class="sec-title">Quem já escolheu <em>viver bem</em></h2>
+      <div class="divider" style="margin:22px auto"></div>
+    </div>
+    <div class="depo-grid">
+      <div class="depo" data-aos="fade-up" data-aos-delay="0">
+        <div class="stars">★★★★★</div>
+        <p class="depo-text">"Visitei dezenas de lançamentos em Jurerê. O Terrá se destaca em outro nível. O cuidado com cada detalhe, a qualidade das construtoras e a proposta de vida são incomparáveis."</p>
+        <div class="depo-author">
+          <img src="https://images.unsplash.com/photo-1494790108755-2616b612b47c?w=100&h=100&fit=crop&q=80" alt="Mariana Costa" class="depo-av" loading="lazy" />
+          <div><div class="depo-name">Mariana Costa</div><div class="depo-role">Empresária · São Paulo</div></div>
+        </div>
+      </div>
+      <div class="depo" data-aos="fade-up" data-aos-delay="100">
+        <div class="stars">★★★★★</div>
+        <p class="depo-text">"O conceito wellness do Terrá é genuíno. Não é marketing — é arquitetura que pensa em como você vai viver, não apenas onde vai morar. Fiz meu investimento com convicção."</p>
+        <div class="depo-author">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&q=80" alt="Rafael Mendonça" class="depo-av" loading="lazy" />
+          <div><div class="depo-name">Rafael Mendonça</div><div class="depo-role">Médico · Porto Alegre</div></div>
+        </div>
+      </div>
+      <div class="depo" data-aos="fade-up" data-aos-delay="200">
+        <div class="stars">★★★★★</div>
+        <p class="depo-text">"Jurerê sempre foi meu sonho, mas o Terrá trouxe algo além: a sensação de que cada espaço foi pensado para o meu bem-estar. É uma experiência completamente diferente."</p>
+        <div class="depo-author">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop&q=80" alt="Ana Lima" class="depo-av" loading="lazy" />
+          <div><div class="depo-name">Ana Lima</div><div class="depo-role">Investidora · Curitiba</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EMPRESAS -->
+<section class="empresas" id="empresas">
+  <div class="container">
+    <div data-aos="fade-up">
+      <span class="sec-eye" style="display:block">Responsáveis</span>
+      <h2 class="sec-title">Solidez em <em>cada etapa</em></h2>
+      <div class="divider" style="margin:22px auto"></div>
+      <p class="sec-text">O Terrá é resultado da atuação integrada do Grupo Maier e da Planner. Todas as etapas foram estruturadas para garantir qualidade, segurança e valorização.</p>
+    </div>
+    <div class="emp-logos" data-aos="fade-up" data-aos-delay="150">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+        <div class="emp-box"><span>Grupo Maier</span></div>
+        <span class="emp-caption">Incorporadora</span>
+      </div>
+      <div style="width:1px;height:60px;background:var(--border)"></div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+        <div class="emp-box"><span>Planner</span></div>
+        <span class="emp-caption">Construtora</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMULÁRIO -->
+<section class="cta-form" id="formulario">
+  <div class="container">
+    <div class="two-col">
+      <div data-aos="fade-right" data-aos-duration="900">
+        <span class="sec-eye">Exclusivo</span>
+        <h2 class="sec-title">O futuro do morar<br><em style="color:var(--gold-light)">começa agora</em></h2>
+        <div class="divider"></div>
+        <p class="sec-text">Preencha o formulário e receba o material completo com plantas, preços e condições especiais de lançamento.</p>
+        <div style="margin-top:32px;display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;align-items:center;gap:12px;color:rgba(255,255,255,0.75);font-size:0.9rem"><span style="color:var(--gold)">✓</span>Material completo com plantas e preços</div>
+          <div style="display:flex;align-items:center;gap:12px;color:rgba(255,255,255,0.75);font-size:0.9rem"><span style="color:var(--gold)">✓</span>Atendimento exclusivo com especialista</div>
+          <div style="display:flex;align-items:center;gap:12px;color:rgba(255,255,255,0.75);font-size:0.9rem"><span style="color:var(--gold)">✓</span>Condições especiais de lançamento</div>
+        </div>
+        <div style="margin-top:36px;padding:20px;background:rgba(255,255,255,0.08);border-radius:var(--r-md);border:1px solid rgba(255,255,255,0.15)">
+          <strong style="color:#fff;display:block;margin-bottom:6px;font-family:var(--serif)">Maria Luiza Chiattoni</strong>
+          <a href="https://wa.me/5548998084284" target="_blank" style="color:var(--gold);font-size:0.9rem;display:block">(48) 99808-4284</a>
+          <a href="https://wa.me/5548991002862" target="_blank" style="color:var(--gold);font-size:0.9rem;display:block">(48) 99100-2862</a>
+          <a href="mailto:marialuiza.chiattoni@creditorealjurere.com.br" style="color:rgba(255,255,255,0.6);font-size:0.82rem;display:block;margin-top:4px">marialuiza.chiattoni@creditorealjurere.com.br</a>
+        </div>
+      </div>
+      <div data-aos="fade-left" data-aos-duration="900" data-aos-delay="150">
+        <div class="form-wrap">
+          <div id="formContent">
+            <h3 class="form-h">Receba o Material</h3>
+            <p class="form-sub">Preencha os dados — retornamos em até 24h</p>
+            <form id="leadForm" novalidate>
+              <div class="fg"><label for="nome">Nome completo</label><input type="text" id="nome" placeholder="Seu nome" required autocomplete="name" /></div>
+              <div class="fg"><label for="tel">WhatsApp</label><input type="tel" id="tel" placeholder="(48) 99999-9999" required autocomplete="tel" /></div>
+              <div class="fg"><label for="email">E-mail</label><input type="email" id="email" placeholder="seu@email.com" required autocomplete="email" /></div>
+              <div class="fg">
+                <label for="interesse">Interesse</label>
+                <select id="interesse">
+                  <option value="">Selecione uma tipologia</option>
+                  <option value="1dorm">1 Dormitório</option>
+                  <option value="2dorm">2 Dormitórios</option>
+                  <option value="3suites">3 Suítes</option>
+                  <option value="garden">Garden</option>
+                  <option value="cobertura">Cobertura</option>
+                  <option value="investimento">Investimento</option>
+                </select>
+              </div>
+              <button type="submit" class="form-btn">👉 Quero Receber o Material Completo</button>
+              <p class="form-legal">Seus dados são seguros e não serão compartilhados.</p>
+            </form>
+          </div>
+          <div class="success" id="successMsg">
+            <div class="s-icon">🎉</div>
+            <h3>Recebemos seu interesse!</h3>
+            <p>Em breve Maria Luiza entrará em contato pelo WhatsApp informado.<br>Obrigado por escolher o Terrá Jurerê.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-logo">Terrá Jurerê Wellness</div>
+  <div class="ft-tag">Um novo jeito de viver em Jurerê</div>
+  <div class="ft-contact">
+    <img src="LOGO%20CR%C3%89DITO%20REAL%20JURERE.png.png" alt="Crédito Real Jurerê" style="height:52px;width:auto;object-fit:contain;margin:0 auto 10px;display:block;filter:brightness(0) invert(1);opacity:0.85" />
+    <strong>Maria Luiza Chiattoni</strong>
+    <a href="https://wa.me/5548998084284">(48) 99808-4284</a>
+    &nbsp;·&nbsp;
+    <a href="https://wa.me/5548991002862">(48) 99100-2862</a>
+    &nbsp;·&nbsp;
+    <a href="mailto:marialuiza.chiattoni@creditorealjurere.com.br" style="color:rgba(255,255,255,0.45)">marialuiza.chiattoni@creditorealjurere.com.br</a>
+  </div>
+  <div class="ft-links">
+    <a href="#sobre">O Empreendimento</a>
+    <a href="#areas">Infraestrutura</a>
+    <a href="#videos">Vídeos</a>
+    <a href="#tipologias">Tipologias</a>
+    <a href="#plantas">Plantas</a>
+    <a href="#localizacao">Localização</a>
+    <a href="#formulario">Contato</a>
+  </div>
+  <p class="ft-copy">© 2025 Terrá Jurerê Wellness — Grupo Maier &amp; Planner. Imagens ilustrativas. Material de divulgação sujeito a alterações.</p>
+</footer>
+
+<!-- WHATSAPP FLUTUANTE -->
+<a class="wpp" href="https://wa.me/5548998084284?text=Olá!%20Tenho%20interesse%20no%20Terrá%20Jurerê%20Wellness%20e%20gostaria%20de%20receber%20mais%20informações." target="_blank" rel="noopener noreferrer" onclick="pixel('Contact',{content_name:'WhatsApp',content_category:'floating'})" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <span class="wpp-tip">Falar com Maria Luiza</span>
+</a>
+
+<!-- MOBILE STICKY -->
+<div class="mob-bar">
+  <a class="mob-btn f" href="#formulario" onclick="pixel('Lead',{content_name:'CTA',content_category:'mobile-sticky'})">📋 Ver Material</a>
+  <a class="mob-btn w" href="https://wa.me/5548998084284?text=Olá!%20Tenho%20interesse%20no%20Terrá%20Jurerê%20Wellness." target="_blank" rel="noopener noreferrer" onclick="pixel('Contact',{content_name:'WhatsApp',content_category:'mobile-sticky'})">💬 WhatsApp</a>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({once:true,offset:80,easing:'ease-out-cubic'});
+
+  /* NAVBAR */
+  const nav=document.getElementById('nav');
+  window.addEventListener('scroll',()=>nav.classList.toggle('s',scrollY>60));
+
+  /* MOBILE MENU */
+  const hamburger=document.getElementById('navHamburger');
+  const navMobile=document.getElementById('navMobile');
+  hamburger.addEventListener('click',()=>{
+    hamburger.classList.toggle('open');
+    navMobile.classList.toggle('open');
+  });
+  function closeMob(){
+    hamburger.classList.remove('open');
+    navMobile.classList.remove('open');
+  }
+  /* Fechar menu ao clicar fora */
+  document.addEventListener('click',e=>{
+    if(!nav.contains(e.target)&&!navMobile.contains(e.target)) closeMob();
+  });
+
+  /* META PIXEL HELPER */
+  function pixel(ev,params){if(typeof fbq!=='undefined')fbq('track',ev,params||{});}
+
+  /* PHONE MASK */
+  document.getElementById('tel').addEventListener('input',function(){
+    let v=this.value.replace(/\D/g,'').substring(0,11);
+    if(v.length>=3)v='('+v.slice(0,2)+') '+v.slice(2);
+    if(v.length>=10)v=v.slice(0,10)+'-'+v.slice(10);
+    this.value=v;
+  });
+
+  /* GALLERY DRAG SCROLL */
+  const track=document.getElementById('galleryTrack');
+  let isDown=false,startX,scrollLeft;
+  track.addEventListener('mousedown',e=>{isDown=true;track.classList.add('dragging');startX=e.pageX-track.offsetLeft;scrollLeft=track.scrollLeft;});
+  track.addEventListener('mouseleave',()=>{isDown=false;track.classList.remove('dragging');});
+  track.addEventListener('mouseup',()=>{isDown=false;track.classList.remove('dragging');});
+  track.addEventListener('mousemove',e=>{if(!isDown)return;e.preventDefault();const x=e.pageX-track.offsetLeft;track.scrollLeft=scrollLeft-(x-startX)*1.5;});
+
+  /* GALLERY DOTS */
+  const items=document.querySelectorAll('.gallery-item');
+  const dotsEl=document.getElementById('galleryDots');
+  items.forEach((_,i)=>{const d=document.createElement('div');d.className='gallery-dot'+(i===0?' active':'');d.onclick=()=>{items[i].scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});};dotsEl.appendChild(d);});
+  const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){const i=[...items].indexOf(e.target);dotsEl.querySelectorAll('.gallery-dot').forEach((d,j)=>d.classList.toggle('active',j===i));}});},{root:track,threshold:0.6});
+  items.forEach(it=>obs.observe(it));
+
+  /* LIGHTBOX */
+  const lbItems=[...items].map(it=>({src:it.dataset.src,label:it.dataset.label}));
+  let lbIdx=0;
+  const lb=document.getElementById('lightbox');
+  const lbImg=document.getElementById('lbImg');
+  const lbCap=document.getElementById('lbCaption');
+  function openLb(idx,label){lbIdx=idx;lbImg.src=lbItems[idx].src;lbCap.textContent=label||lbItems[idx].label;lb.classList.add('open');}
+  function openLbSrc(src,label){lbImg.src=src;lbCap.textContent=label;lb.classList.add('open');lbIdx=-1;}
+  items.forEach(it=>it.addEventListener('click',()=>openLb(parseInt(it.dataset.idx),it.dataset.label)));
+  document.getElementById('lbClose').onclick=()=>lb.classList.remove('open');
+  document.getElementById('lbPrev').onclick=()=>{if(lbIdx<0)return;lbIdx=(lbIdx-1+lbItems.length)%lbItems.length;lbImg.src=lbItems[lbIdx].src;lbCap.textContent=lbItems[lbIdx].label;};
+  document.getElementById('lbNext').onclick=()=>{if(lbIdx<0)return;lbIdx=(lbIdx+1)%lbItems.length;lbImg.src=lbItems[lbIdx].src;lbCap.textContent=lbItems[lbIdx].label;};
+  lb.addEventListener('click',e=>{if(e.target===lb)lb.classList.remove('open');});
+  document.addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')lb.classList.remove('open');if(e.key==='ArrowLeft')document.getElementById('lbPrev').click();if(e.key==='ArrowRight')document.getElementById('lbNext').click();});
+
+  /* VIDEO MODAL — YouTube */
+  const vidModal=document.getElementById('vidModal');
+  const modalIframe=document.getElementById('modalIframe');
+  const vidModalInner=document.getElementById('vidModalInner');
+  function openVid(ytId,isShort){
+    modalIframe.src=`https://www.youtube-nocookie.com/embed/${ytId}?autoplay=1&rel=0&modestbranding=1`;
+    vidModalInner.className=isShort?'vid-modal-inner short':'vid-modal-inner';
+    vidModal.classList.add('open');
+    pixel('ViewContent',{content_name:'Video',content_category:ytId});
+  }
+  function closeVid(){
+    modalIframe.src='';
+    vidModal.classList.remove('open');
+  }
+  vidModal.addEventListener('click',e=>{if(e.target===vidModal)closeVid();});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&vidModal.classList.contains('open'))closeVid();});
+
+  /* PLANTAS VIEWER */
+  const plantasData=['PLANTAS%20TERR%C3%81/1.jpg','PLANTAS%20TERR%C3%81/2.jpg','PLANTAS%20TERR%C3%81/3.jpg','PLANTAS%20TERR%C3%81/4.jpg','PLANTAS%20TERR%C3%81/5.jpg','PLANTAS%20TERR%C3%81/6.jpg','PLANTAS%20TERR%C3%81/7.jpg','PLANTAS%20TERR%C3%81/8.jpg','PLANTAS%20TERR%C3%81/9.jpg','PLANTAS%20TERR%C3%81/10.jpg','PLANTAS%20TERR%C3%81/11.jpg','PLANTAS%20TERR%C3%81/12.jpg','PLANTAS%20TERR%C3%81/13.jpg','PLANTAS%20TERR%C3%81/14.jpg','PLANTAS%20TERR%C3%81/15.jpg'];
+  let plantaIdx=0;
+  const plantaMainImg=document.getElementById('plantaMainImg');
+  const plantaCounter=document.getElementById('plantaCounter');
+  const plantaThumbs=document.querySelectorAll('.plantas-thumb-item');
+  function setPlanta(idx){
+    plantaIdx=idx;
+    plantaMainImg.classList.add('fade');
+    setTimeout(()=>{
+      plantaMainImg.src=plantasData[idx];
+      plantaMainImg.classList.remove('fade');
+    },200);
+    plantaCounter.textContent=(idx+1)+' / '+plantasData.length;
+    plantaThumbs.forEach((t,i)=>t.classList.toggle('active',i===idx));
+    plantaThumbs[idx].scrollIntoView({behavior:'smooth',block:'nearest',inline:'nearest'});
+  }
+  function navPlanta(dir){setPlanta((plantaIdx+dir+plantasData.length)%plantasData.length);}
+  document.addEventListener('keydown',e=>{
+    const plantasSection=document.getElementById('plantas');
+    if(!plantasSection)return;
+    const r=plantasSection.getBoundingClientRect();
+    if(r.top<window.innerHeight&&r.bottom>0){
+      if(e.key==='ArrowLeft'&&!vidModal.classList.contains('open')&&!document.getElementById('lightbox').classList.contains('open'))navPlanta(-1);
+      if(e.key==='ArrowRight'&&!vidModal.classList.contains('open')&&!document.getElementById('lightbox').classList.contains('open'))navPlanta(1);
+    }
+  });
+
+  /* FORM SUBMIT */
+  let formStarted=false;
+  document.getElementById('leadForm').addEventListener('focusin',()=>{if(!formStarted){formStarted=true;pixel('InitiateCheckout',{content_name:'Form Start'});}});
+  document.getElementById('leadForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    const nome=document.getElementById('nome').value.trim();
+    const tel=document.getElementById('tel').value.trim();
+    const email=document.getElementById('email').value.trim();
+    const interesse=document.getElementById('interesse').value;
+    if(!nome||!tel||!email){alert('Por favor, preencha nome, WhatsApp e e-mail.');return;}
+    pixel('Lead',{content_name:'Terra Jurere Wellness — Lead',content_category:interesse||'não informado'});
+    const msg=encodeURIComponent(`Olá! Me chamo ${nome} e tenho interesse no Terrá Jurerê Wellness.\nTipologia: ${interesse||'não informado'}\nE-mail: ${email}\nGostaria de receber o material completo.`);
+    window.open(`https://wa.me/5548998084284?text=${msg}`,'_blank');
+    document.getElementById('formContent').style.display='none';
+    document.getElementById('successMsg').style.display='block';
+  });
+
+  /* SMOOTH SCROLL */
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click',e=>{
+      const t=document.querySelector(a.getAttribute('href'));
+      if(t){e.preventDefault();window.scrollTo({top:t.offsetTop-72,behavior:'smooth'});}
+    });
+  });
+</script>
+</body>
+</html>

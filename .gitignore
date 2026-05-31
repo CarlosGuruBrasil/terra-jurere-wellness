@@ -15,6 +15,5 @@ Thumbs.db
 *.pdf
 
 # Arquivos legados (não usados no site novo)
-index.html
 script.js
 styles.css
