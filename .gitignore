@@ -1,0 +1,20 @@
+# Vídeos — hospedados no YouTube (muito grandes para Git)
+*.mp4
+*.mov
+*.avi
+*.webm
+
+# Arquivos temporários do sistema
+.DS_Store
+Thumbs.db
+
+# Vercel
+.vercel
+
+# PDF original
+*.pdf
+
+# Arquivos legados (não usados no site novo)
+index.html
+script.js
+styles.css
