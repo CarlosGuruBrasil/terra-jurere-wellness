@@ -90,9 +90,9 @@
 
     /* HERO VIDEO */
     .hero{position:relative;height:100vh;min-height:640px;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
-    .hero-video{position:absolute;inset:0;z-index:0}
-    .hero-video video{width:100%;height:100%;object-fit:cover}
-    .hero-video::after{content:'';position:absolute;inset:0;background:linear-gradient(160deg,rgba(20,26,14,0.75) 0%,rgba(74,93,58,0.5) 60%,rgba(20,18,12,0.8) 100%)}
+    .hero-video{position:absolute;inset:0;z-index:0;overflow:hidden;background:#111}
+    .hero-video iframe{position:absolute;top:50%;left:50%;width:100vw;height:56.25vw;min-height:100vh;min-width:177.78vh;transform:translate(-50%,-50%);pointer-events:none;border:none}
+    .hero-video::after{content:'';position:absolute;inset:0;background:linear-gradient(160deg,rgba(20,26,14,0.78) 0%,rgba(74,93,58,0.5) 60%,rgba(20,18,12,0.82) 100%)}
     .hero-content{position:relative;z-index:2;max-width:840px;padding:0 5%}
     .eyebrow{display:inline-block;font-size:0.72rem;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold-light);padding:6px 18px;border:1px solid rgba(200,169,110,0.4);border-radius:50px;backdrop-filter:blur(6px);margin-bottom:20px}
     .hero-title{font-family:var(--serif);font-size:clamp(2.8rem,6.5vw,5.2rem);font-weight:700;color:#fff;line-height:1.1;margin-bottom:14px;letter-spacing:-0.01em}
@@ -327,7 +327,8 @@
     .videos .divider{background:linear-gradient(90deg,var(--gold),transparent)}
     .vid-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:48px}
     .vid-card{border-radius:var(--r-md);overflow:hidden;position:relative;aspect-ratio:16/9;cursor:pointer;background:#0a0a0a}
-    .vid-card video{width:100%;height:100%;object-fit:cover;pointer-events:none;display:block}
+    .vid-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s ease}
+    .vid-card:hover img{transform:scale(1.05)}
     .vid-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.3);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;transition:background var(--ease)}
     .vid-card:hover .vid-overlay{background:rgba(0,0,0,0.5)}
     .vid-play-btn{width:54px;height:54px;background:rgba(200,169,110,0.92);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:transform var(--ease),background var(--ease);flex-shrink:0}
@@ -338,7 +339,9 @@
     .vid-modal{display:none;position:fixed;inset:0;z-index:9998;background:rgba(0,0,0,0.96);align-items:center;justify-content:center}
     .vid-modal.open{display:flex}
     .vid-modal-inner{position:relative;width:min(92vw,1100px)}
-    .vid-modal-inner video{width:100%;border-radius:var(--r-md);display:block}
+    .vid-modal-inner.short{width:min(92vw,440px)}
+    .vid-modal-inner iframe{width:100%;aspect-ratio:16/9;border-radius:var(--r-md);display:block;border:none}
+    .vid-modal-inner.short iframe{aspect-ratio:9/16}
     .vid-modal-close{position:absolute;top:-44px;right:0;color:#fff;font-size:2rem;cursor:pointer;opacity:0.7;line-height:1;transition:opacity 0.2s}
     .vid-modal-close:hover{opacity:1}
 
@@ -447,9 +450,12 @@
 <!-- HERO — vídeo de fundo -->
 <section class="hero" id="inicio">
   <div class="hero-video">
-    <video autoplay muted loop playsinline preload="auto" id="heroVid">
-      <source src="hero%20video.mp4" type="video/mp4" />
-    </video>
+    <iframe
+      src="https://www.youtube-nocookie.com/embed/pHsSgnI1EjY?autoplay=1&mute=1&loop=1&playlist=pHsSgnI1EjY&controls=0&disablekb=1&iv_load_policy=3&modestbranding=1&rel=0&playsinline=1"
+      allow="autoplay; encrypted-media"
+      allowfullscreen
+      title="Terrá Jurerê Wellness"
+    ></iframe>
   </div>
   <div class="hero-content">
     <span class="eyebrow">Jurerê · Florianópolis · Lançamento</span>
@@ -696,43 +702,43 @@
       <p style="color:rgba(255,255,255,0.6);font-size:0.95rem;margin-top:-4px">Clique em qualquer vídeo para assistir</p>
     </div>
     <div class="vid-grid">
-      <div class="vid-card" data-aos="fade-up" data-aos-delay="0" onclick="openVid('01.mp4')">
-        <video src="01.mp4" muted preload="metadata"></video>
+      <div class="vid-card" data-aos="fade-up" data-aos-delay="0" onclick="openVid('Yisa6fsJnKQ',true)">
+        <img src="https://img.youtube.com/vi/Yisa6fsJnKQ/hqdefault.jpg" alt="Vista do Empreendimento 01" loading="lazy" />
         <div class="vid-overlay">
           <div class="vid-play-btn"></div>
           <span class="vid-label">Vista do Empreendimento · 01</span>
         </div>
       </div>
-      <div class="vid-card" data-aos="fade-up" data-aos-delay="80" onclick="openVid('02.mp4')">
-        <video src="02.mp4" muted preload="metadata"></video>
+      <div class="vid-card" data-aos="fade-up" data-aos-delay="80" onclick="openVid('q2KtQOzn59A',true)">
+        <img src="https://img.youtube.com/vi/q2KtQOzn59A/hqdefault.jpg" alt="Vista do Empreendimento 02" loading="lazy" />
         <div class="vid-overlay">
           <div class="vid-play-btn"></div>
           <span class="vid-label">Vista do Empreendimento · 02</span>
         </div>
       </div>
-      <div class="vid-card" data-aos="fade-up" data-aos-delay="160" onclick="openVid('03.mp4')">
-        <video src="03.mp4" muted preload="metadata"></video>
+      <div class="vid-card" data-aos="fade-up" data-aos-delay="160" onclick="openVid('n8RTviySMjI',true)">
+        <img src="https://img.youtube.com/vi/n8RTviySMjI/hqdefault.jpg" alt="Vista do Empreendimento 03" loading="lazy" />
         <div class="vid-overlay">
           <div class="vid-play-btn"></div>
           <span class="vid-label">Vista do Empreendimento · 03</span>
         </div>
       </div>
-      <div class="vid-card" data-aos="fade-up" data-aos-delay="240" onclick="openVid('04.mp4')">
-        <video src="04.mp4" muted preload="metadata"></video>
+      <div class="vid-card" data-aos="fade-up" data-aos-delay="240" onclick="openVid('q1-xaV1hhQU',true)">
+        <img src="https://img.youtube.com/vi/q1-xaV1hhQU/hqdefault.jpg" alt="Vista do Empreendimento 04" loading="lazy" />
         <div class="vid-overlay">
           <div class="vid-play-btn"></div>
           <span class="vid-label">Vista do Empreendimento · 04</span>
         </div>
       </div>
-      <div class="vid-card" data-aos="fade-up" data-aos-delay="320" onclick="openVid('Lojas%20Terr%C3%A1.mp4')">
-        <video src="Lojas%20Terr%C3%A1.mp4" muted preload="metadata"></video>
+      <div class="vid-card" data-aos="fade-up" data-aos-delay="320" onclick="openVid('2ZItTLDkD9A',true)">
+        <img src="https://img.youtube.com/vi/2ZItTLDkD9A/hqdefault.jpg" alt="Lojas Terrá" loading="lazy" />
         <div class="vid-overlay">
           <div class="vid-play-btn"></div>
           <span class="vid-label">Lojas Terrá</span>
         </div>
       </div>
-      <div class="vid-card" data-aos="fade-up" data-aos-delay="400" onclick="openVid('WhatsApp%20Video%202026-05-19%20at%2010.15.33.mp4')">
-        <video src="WhatsApp%20Video%202026-05-19%20at%2010.15.33.mp4" muted preload="metadata"></video>
+      <div class="vid-card" data-aos="fade-up" data-aos-delay="400" onclick="openVid('S2f0fITAW2s',false)">
+        <img src="https://img.youtube.com/vi/S2f0fITAW2s/hqdefault.jpg" alt="Terrá Detalhes" loading="lazy" />
         <div class="vid-overlay">
           <div class="vid-play-btn"></div>
           <span class="vid-label">Terrá · Detalhes</span>
@@ -744,9 +750,9 @@
 
 <!-- VIDEO MODAL -->
 <div class="vid-modal" id="vidModal">
-  <div class="vid-modal-inner">
+  <div class="vid-modal-inner" id="vidModalInner">
     <span class="vid-modal-close" onclick="closeVid()">&times;</span>
-    <video id="modalVideo" controls playsinline style="width:100%;border-radius:16px;display:block"></video>
+    <iframe id="modalIframe" src="" allow="autoplay; encrypted-media" allowfullscreen title="Vídeo Terrá Jurerê"></iframe>
   </div>
 </div>
 
@@ -1142,27 +1148,22 @@
   lb.addEventListener('click',e=>{if(e.target===lb)lb.classList.remove('open');});
   document.addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')lb.classList.remove('open');if(e.key==='ArrowLeft')document.getElementById('lbPrev').click();if(e.key==='ArrowRight')document.getElementById('lbNext').click();});
 
-  /* VIDEO MODAL */
+  /* VIDEO MODAL — YouTube */
   const vidModal=document.getElementById('vidModal');
-  const modalVideo=document.getElementById('modalVideo');
-  function openVid(src){
-    modalVideo.src=src;
+  const modalIframe=document.getElementById('modalIframe');
+  const vidModalInner=document.getElementById('vidModalInner');
+  function openVid(ytId,isShort){
+    modalIframe.src=`https://www.youtube-nocookie.com/embed/${ytId}?autoplay=1&rel=0&modestbranding=1`;
+    vidModalInner.className=isShort?'vid-modal-inner short':'vid-modal-inner';
     vidModal.classList.add('open');
-    modalVideo.play();
-    pixel('ViewContent',{content_name:'Video',content_category:src});
+    pixel('ViewContent',{content_name:'Video',content_category:ytId});
   }
   function closeVid(){
-    modalVideo.pause();
-    modalVideo.src='';
+    modalIframe.src='';
     vidModal.classList.remove('open');
   }
   vidModal.addEventListener('click',e=>{if(e.target===vidModal)closeVid();});
   document.addEventListener('keydown',e=>{if(e.key==='Escape'&&vidModal.classList.contains('open'))closeVid();});
-
-  /* Seek video thumbnails to 1s for better preview frame */
-  document.querySelectorAll('.vid-card video').forEach(v=>{
-    v.addEventListener('loadedmetadata',()=>{try{v.currentTime=1;}catch(e){}});
-  });
 
   /* PLANTAS VIEWER */
   const plantasData=['PLANTAS%20TERR%C3%81/1.jpg','PLANTAS%20TERR%C3%81/2.jpg','PLANTAS%20TERR%C3%81/3.jpg','PLANTAS%20TERR%C3%81/4.jpg','PLANTAS%20TERR%C3%81/5.jpg','PLANTAS%20TERR%C3%81/6.jpg','PLANTAS%20TERR%C3%81/7.jpg','PLANTAS%20TERR%C3%81/8.jpg','PLANTAS%20TERR%C3%81/9.jpg','PLANTAS%20TERR%C3%81/10.jpg','PLANTAS%20TERR%C3%81/11.jpg','PLANTAS%20TERR%C3%81/12.jpg','PLANTAS%20TERR%C3%81/13.jpg','PLANTAS%20TERR%C3%81/14.jpg','PLANTAS%20TERR%C3%81/15.jpg'];
