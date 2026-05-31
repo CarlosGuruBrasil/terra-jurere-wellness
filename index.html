@@ -100,8 +100,8 @@
 
     /* HERO VIDEO */
     .hero{position:relative;height:100vh;min-height:640px;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
-    .hero-video{position:absolute;inset:0;z-index:0;overflow:hidden;background:#111}
-    .hero-video iframe{position:absolute;top:50%;left:50%;width:115vw;height:64.68vw;min-height:115vh;min-width:204.45vh;transform:translate(-50%,-50%);pointer-events:none;border:none}
+    .hero-video{position:absolute;inset:0;z-index:0;overflow:hidden;background:#111 url('imagens/og-image.jpg') center/cover no-repeat}
+    .hero-video video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.5s ease}
     .hero-video::after{content:'';position:absolute;inset:0;background:linear-gradient(160deg,rgba(20,26,14,0.78) 0%,rgba(74,93,58,0.5) 60%,rgba(20,18,12,0.82) 100%)}
     .hero-content{position:relative;z-index:2;max-width:840px;padding:0 5%}
     .eyebrow{display:inline-block;font-size:0.72rem;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold-light);padding:6px 18px;border:1px solid rgba(200,169,110,0.4);border-radius:50px;backdrop-filter:blur(6px);margin-bottom:20px}
@@ -357,8 +357,7 @@
     .vid-modal.open{display:flex}
     .vid-modal-inner{position:relative;width:min(92vw,1100px)}
     .vid-modal-inner.short{width:min(92vw,440px)}
-    .vid-modal-inner iframe{width:100%;aspect-ratio:16/9;border-radius:var(--r-md);display:block;border:none}
-    .vid-modal-inner.short iframe{aspect-ratio:9/16}
+    .vid-modal-inner video{width:100%;max-height:90vh;border-radius:var(--r-md);display:block;border:none;background:#000}
     .vid-modal-close{position:absolute;top:-44px;right:0;color:#fff;font-size:2rem;cursor:pointer;opacity:0.7;line-height:1;transition:opacity 0.2s}
     .vid-modal-close:hover{opacity:1}
 
@@ -373,16 +372,75 @@
     .plantas-arr{width:40px;height:40px;background:rgba(74,93,58,0.85);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;pointer-events:all;border:none;color:#fff;font-size:1.2rem;transition:background var(--ease),transform var(--ease)}
     .plantas-arr:hover{background:var(--olive);transform:scale(1.08)}
     .plantas-counter{text-align:center;margin-top:14px;font-size:0.82rem;color:var(--muted);letter-spacing:0.06em}
-    .plantas-sidebar{display:flex;flex-direction:column;gap:8px;max-height:560px;overflow-y:auto;padding-right:4px}
-    .plantas-sidebar::-webkit-scrollbar{width:4px}
-    .plantas-sidebar::-webkit-scrollbar-track{background:transparent}
-    .plantas-sidebar::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
-    .plantas-thumb-item{border-radius:var(--r-sm);overflow:hidden;cursor:pointer;border:2px solid transparent;transition:border-color var(--ease),opacity var(--ease);aspect-ratio:4/3;background:var(--white)}
-    .plantas-thumb-item img{width:100%;height:100%;object-fit:contain;padding:4px}
-    .plantas-thumb-item{position:relative}
-    .plantas-thumb-item.active{border-color:var(--olive)}
-    .plantas-thumb-item:hover{border-color:var(--sand)}
-    .thumb-lbl{position:absolute;bottom:0;left:0;right:0;background:rgba(74,93,58,0.92);color:#fff;font-size:0.58rem;font-weight:600;text-align:center;padding:4px 2px;letter-spacing:0.02em;line-height:1.2}
+    .plantas-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-height: 560px;
+      overflow-y: auto;
+      padding-right: 6px;
+    }
+    .plantas-sidebar::-webkit-scrollbar {
+      width: 5px;
+    }
+    .plantas-sidebar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .plantas-sidebar::-webkit-scrollbar-thumb {
+      background: rgba(74, 93, 58, 0.2);
+      border-radius: 10px;
+    }
+    .plantas-sidebar::-webkit-scrollbar-thumb:hover {
+      background: var(--olive);
+    }
+    .plantas-thumb-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 20px;
+      border-radius: var(--r-sm);
+      background: var(--white);
+      border: 1px solid rgba(74, 93, 58, 0.15);
+      cursor: pointer;
+      transition: all var(--ease);
+      flex-shrink: 0;
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: auto !important;
+      min-height: 52px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    }
+    .plantas-thumb-item img {
+      display: none !important;
+    }
+    .thumb-lbl {
+      position: static !important;
+      background: transparent !important;
+      color: var(--olive) !important;
+      font-family: var(--sans);
+      font-size: 0.85rem !important;
+      font-weight: 600 !important;
+      text-align: center !important;
+      width: 100%;
+      padding: 0 !important;
+      letter-spacing: 0.05em !important;
+      display: block !important;
+      transition: color var(--ease);
+    }
+    .plantas-thumb-item.active {
+      background: var(--olive) !important;
+      border-color: var(--olive) !important;
+      box-shadow: 0 4px 16px rgba(74, 93, 58, 0.25);
+      transform: translateY(-1px);
+    }
+    .plantas-thumb-item.active .thumb-lbl {
+      color: var(--white) !important;
+    }
+    .plantas-thumb-item:hover:not(.active) {
+      border-color: var(--sand) !important;
+      background: rgba(196, 168, 130, 0.08) !important;
+      transform: translateX(4px);
+    }
     .plantas-fullscreen-hint{text-align:center;margin-top:10px;font-size:0.75rem;color:var(--muted);display:flex;align-items:center;justify-content:center;gap:6px}
 
     @media(max-width:920px){
@@ -393,8 +451,9 @@
       .areas-grid{grid-template-columns:repeat(2,1fr)}
       .vid-grid{grid-template-columns:repeat(2,1fr)}
       .plantas-viewer{grid-template-columns:1fr}
-      .plantas-sidebar{flex-direction:row;max-height:none;overflow-x:auto;overflow-y:visible;padding-right:0;padding-bottom:4px;-webkit-overflow-scrolling:touch}
-      .plantas-thumb-item{min-width:100px;flex:0 0 100px}
+      .plantas-sidebar{flex-direction:row !important;max-height:none !important;overflow-x:auto !important;overflow-y:visible !important;padding-right:0 !important;padding-bottom:8px !important;-webkit-overflow-scrolling:touch}
+      .plantas-thumb-item{min-width:150px !important;flex:0 0 150px !important;padding:10px 12px !important;min-height:42px !important;justify-content:center !important;aspect-ratio:auto !important}
+      .plantas-thumb-item:hover:not(.active){transform:translateY(-2px) !important}
       .plantas-main-wrap{min-height:380px}
     }
     @media(max-width:900px){
@@ -480,12 +539,9 @@
 <!-- HERO — vídeo de fundo -->
 <section class="hero" id="inicio">
   <div class="hero-video">
-    <iframe
-      src="https://www.youtube.com/embed/pHsSgnI1EjY?autoplay=1&mute=1&loop=1&playlist=pHsSgnI1EjY&controls=0&disablekb=1&iv_load_policy=3&modestbranding=1&rel=0&playsinline=1"
-      allow="autoplay; encrypted-media"
-      allowfullscreen
-      title="Terrá Jurerê Wellness"
-    ></iframe>
+    <video autoplay muted loop playsinline poster="imagens/og-image.jpg">
+      <source src="hero-video.mp4" type="video/mp4" />
+    </video>
   </div>
   <div class="hero-content">
     <span class="eyebrow">Jurerê · Florianópolis · Lançamento</span>
@@ -768,42 +824,42 @@
       <p style="color:rgba(255,255,255,0.6);font-size:0.95rem;margin-top:-4px">Clique em qualquer vídeo para assistir</p>
     </div>
     <div class="vid-grid">
-      <div class="vid-card" data-aos="fade-up" data-aos-delay="0" onclick="openVid('Yisa6fsJnKQ',true)">
+      <div class="vid-card" data-aos="fade-up" data-aos-delay="0" onclick="openVid('videos/01.mp4',true)">
         <img src="thumbnails/video-01.webp" alt="Vista do Empreendimento 01" loading="lazy" />
         <div class="vid-overlay">
           <div class="vid-play-btn"></div>
           <span class="vid-label">Vista do Empreendimento · 01</span>
         </div>
       </div>
-      <div class="vid-card" data-aos="fade-up" data-aos-delay="80" onclick="openVid('q2KtQOzn59A',true)">
+      <div class="vid-card" data-aos="fade-up" data-aos-delay="80" onclick="openVid('videos/02.mp4',true)">
         <img src="thumbnails/video-02.webp" alt="Vista do Empreendimento 02" loading="lazy" />
         <div class="vid-overlay">
           <div class="vid-play-btn"></div>
           <span class="vid-label">Vista do Empreendimento · 02</span>
         </div>
       </div>
-      <div class="vid-card" data-aos="fade-up" data-aos-delay="160" onclick="openVid('n8RTviySMjI',true)">
+      <div class="vid-card" data-aos="fade-up" data-aos-delay="160" onclick="openVid('videos/03.mp4',true)">
         <img src="thumbnails/video-03.webp" alt="Vista do Empreendimento 03" loading="lazy" />
         <div class="vid-overlay">
           <div class="vid-play-btn"></div>
           <span class="vid-label">Vista do Empreendimento · 03</span>
         </div>
       </div>
-      <div class="vid-card" data-aos="fade-up" data-aos-delay="240" onclick="openVid('q1-xaV1hhQU',true)">
+      <div class="vid-card" data-aos="fade-up" data-aos-delay="240" onclick="openVid('videos/04.mp4',true)">
         <img src="thumbnails/video-04.webp" alt="Vista do Empreendimento 04" loading="lazy" />
         <div class="vid-overlay">
           <div class="vid-play-btn"></div>
           <span class="vid-label">Vista do Empreendimento · 04</span>
         </div>
       </div>
-      <div class="vid-card" data-aos="fade-up" data-aos-delay="320" onclick="openVid('2ZItTLDkD9A',true)">
+      <div class="vid-card" data-aos="fade-up" data-aos-delay="320" onclick="openVid('videos/lojas.mp4',true)">
         <img src="thumbnails/video-lojas.webp" alt="Lojas Terrá" loading="lazy" />
         <div class="vid-overlay">
           <div class="vid-play-btn"></div>
           <span class="vid-label">Lojas Terrá</span>
         </div>
       </div>
-      <div class="vid-card" data-aos="fade-up" data-aos-delay="400" onclick="openVid('S2f0fITAW2s',false)">
+      <div class="vid-card" data-aos="fade-up" data-aos-delay="400" onclick="openVid('videos/detalhes.mp4',false)">
         <img src="thumbnails/video-wpp.webp" alt="Terrá Detalhes" loading="lazy" />
         <div class="vid-overlay">
           <div class="vid-play-btn"></div>
@@ -818,7 +874,7 @@
 <div class="vid-modal" id="vidModal">
   <div class="vid-modal-inner" id="vidModalInner">
     <span class="vid-modal-close" onclick="closeVid()">&times;</span>
-    <iframe id="modalIframe" src="" allow="autoplay; encrypted-media" allowfullscreen title="Vídeo Terrá Jurerê"></iframe>
+    <video id="modalVideo" controls playsinline preload="none"></video>
   </div>
 </div>
 
@@ -921,21 +977,21 @@
         </div>
       </div>
       <div class="plantas-sidebar" id="plantasSidebar">
-        <div class="plantas-thumb-item active" onclick="setPlanta(0)" title="Apto 204-205"><img src="plantas/1.webp" alt="Apto 204-205" loading="lazy" /><div class="thumb-lbl">204-205 · Garden</div></div>
-        <div class="plantas-thumb-item" onclick="setPlanta(1)" title="Apto 209"><img src="plantas/2.webp" alt="Apto 209" loading="lazy" /><div class="thumb-lbl">209 · 1S + 1D</div></div>
-        <div class="plantas-thumb-item" onclick="setPlanta(2)" title="Apto 301-302"><img src="plantas/3.webp" alt="Apto 301-302" loading="lazy" /><div class="thumb-lbl">301-302 · 3S</div></div>
-        <div class="plantas-thumb-item" onclick="setPlanta(3)" title="Apto 303-304"><img src="plantas/4.webp" alt="Apto 303-304" loading="lazy" /><div class="thumb-lbl">303-304 · 1S+1D</div></div>
-        <div class="plantas-thumb-item" onclick="setPlanta(4)" title="Apto 305-310"><img src="plantas/5.webp" alt="Apto 305-310" loading="lazy" /><div class="thumb-lbl">305-310 · 1S+1D</div></div>
-        <div class="plantas-thumb-item" onclick="setPlanta(5)" title="Apto 312-313"><img src="plantas/6.webp" alt="Apto 312-313" loading="lazy" /><div class="thumb-lbl">312-313 · 3S</div></div>
-        <div class="plantas-thumb-item" onclick="setPlanta(6)" title="Apto 316-320"><img src="plantas/7.webp" alt="Apto 316-320" loading="lazy" /><div class="thumb-lbl">316-320 · 2S</div></div>
-        <div class="plantas-thumb-item" onclick="setPlanta(7)" title="Apto 512"><img src="plantas/8.webp" alt="Apto 512" loading="lazy" /><div class="thumb-lbl">512 · Garden</div></div>
-        <div class="plantas-thumb-item" onclick="setPlanta(8)" title="Apto 612-613"><img src="plantas/9.webp" alt="Apto 612-613" loading="lazy" /><div class="thumb-lbl">612-613 · Garden</div></div>
-        <div class="plantas-thumb-item" onclick="setPlanta(9)" title="Apto 701-702"><img src="plantas/10.webp" alt="Apto 701-702" loading="lazy" /><div class="thumb-lbl">701-702 · 1S+2D</div></div>
-        <div class="plantas-thumb-item" onclick="setPlanta(10)" title="Apto 712-713"><img src="plantas/11.webp" alt="Apto 712-713" loading="lazy" /><div class="thumb-lbl">712-713 · Garden</div></div>
-        <div class="plantas-thumb-item" onclick="setPlanta(11)" title="Apto 801-802"><img src="plantas/12.webp" alt="Apto 801-802" loading="lazy" /><div class="thumb-lbl">801-802 · 2S</div></div>
-        <div class="plantas-thumb-item" onclick="setPlanta(12)" title="Apto 808-810"><img src="plantas/13.webp" alt="Apto 808-810" loading="lazy" /><div class="thumb-lbl">808-810 · Garden</div></div>
-        <div class="plantas-thumb-item" onclick="setPlanta(13)" title="Apto 901-905"><img src="plantas/14.webp" alt="Apto 901-905" loading="lazy" /><div class="thumb-lbl">901-905 · 3S/2S</div></div>
-        <div class="plantas-thumb-item" onclick="setPlanta(14)" title="Apto 906-910"><img src="plantas/15.webp" alt="Apto 906-910" loading="lazy" /><div class="thumb-lbl">906-910 · 3S/1S+2D</div></div>
+        <div class="plantas-thumb-item active" onclick="setPlanta(0)" title="Apto 204-205"><div class="thumb-lbl">204-205 · Garden</div></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(1)" title="Apto 209"><div class="thumb-lbl">209 · 1S + 1D</div></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(2)" title="Apto 301-302"><div class="thumb-lbl">301-302 · 3S</div></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(3)" title="Apto 303-304"><div class="thumb-lbl">303-304 · 1S+1D</div></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(4)" title="Apto 305-310"><div class="thumb-lbl">305-310 · 1S+1D</div></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(5)" title="Apto 312-313"><div class="thumb-lbl">312-313 · 3S</div></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(6)" title="Apto 316-320"><div class="thumb-lbl">316-320 · 2S</div></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(7)" title="Apto 512"><div class="thumb-lbl">512 · Garden</div></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(8)" title="Apto 612-613"><div class="thumb-lbl">612-613 · Garden</div></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(9)" title="Apto 701-702"><div class="thumb-lbl">701-702 · 1S+2D</div></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(10)" title="Apto 712-713"><div class="thumb-lbl">712-713 · Garden</div></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(11)" title="Apto 801-802"><div class="thumb-lbl">801-802 · 2S</div></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(12)" title="Apto 808-810"><div class="thumb-lbl">808-810 · Garden</div></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(13)" title="Apto 901-905"><div class="thumb-lbl">901-905 · 3S/2S</div></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(14)" title="Apto 906-910"><div class="thumb-lbl">906-910 · 3S/1S+2D</div></div>
       </div>
     </div>
   </div>
@@ -1048,29 +1104,6 @@
           <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop&q=80" alt="Ana Lima" class="depo-av" loading="lazy" />
           <div><div class="depo-name">Ana Lima</div><div class="depo-role">Investidora · Curitiba</div></div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- EMPRESAS -->
-<section class="empresas" id="empresas">
-  <div class="container">
-    <div data-aos="fade-up">
-      <span class="sec-eye" style="display:block">Responsáveis</span>
-      <h2 class="sec-title">Solidez em <em>cada etapa</em></h2>
-      <div class="divider" style="margin:22px auto"></div>
-      <p class="sec-text">O Terrá é resultado da atuação integrada do Grupo Maier e da Planner. Todas as etapas foram estruturadas para garantir qualidade, segurança e valorização.</p>
-    </div>
-    <div class="emp-logos" data-aos="fade-up" data-aos-delay="150">
-      <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
-        <div class="emp-box"><span>Grupo Maier</span></div>
-        <span class="emp-caption">Incorporadora</span>
-      </div>
-      <div class="emp-divider" style="width:1px;height:60px;background:var(--border)"></div>
-      <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
-        <div class="emp-box"><span>Planner</span></div>
-        <span class="emp-caption">Construtora</span>
       </div>
     </div>
   </div>
@@ -1240,18 +1273,20 @@
   lb.addEventListener('click',e=>{if(e.target===lb)lb.classList.remove('open');});
   document.addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')lb.classList.remove('open');if(e.key==='ArrowLeft')document.getElementById('lbPrev').click();if(e.key==='ArrowRight')document.getElementById('lbNext').click();});
 
-  /* VIDEO MODAL — YouTube */
+  /* VIDEO MODAL — Player Nativo */
   const vidModal=document.getElementById('vidModal');
-  const modalIframe=document.getElementById('modalIframe');
+  const modalVideo=document.getElementById('modalVideo');
   const vidModalInner=document.getElementById('vidModalInner');
-  function openVid(ytId,isShort){
-    modalIframe.src=`https://www.youtube.com/embed/${ytId}?autoplay=1&rel=0&modestbranding=1`;
+  function openVid(videoSrc,isShort){
+    modalVideo.src=videoSrc;
     vidModalInner.className=isShort?'vid-modal-inner short':'vid-modal-inner';
     vidModal.classList.add('open');
-    pixel('ViewContent',{content_name:'Video',content_category:ytId});
+    modalVideo.play().catch(()=>{});
+    pixel('ViewContent',{content_name:'Video',content_category:videoSrc});
   }
   function closeVid(){
-    modalIframe.src='';
+    modalVideo.pause();
+    modalVideo.src='';
     vidModal.classList.remove('open');
   }
   vidModal.addEventListener('click',e=>{if(e.target===vidModal)closeVid();});
@@ -1327,6 +1362,19 @@
       if(t){e.preventDefault();window.scrollTo({top:t.offsetTop-72,behavior:'smooth'});}
     });
   });
+
+  /* FADE-IN HERO VIDEO YOUTUBE */
+  setTimeout(() => {
+    const heroVid = document.querySelector('.hero-video video');
+    if (heroVid) {
+      heroVid.addEventListener('playing', () => {
+        heroVid.style.opacity = '1';
+      });
+      if (!heroVid.paused) {
+        heroVid.style.opacity = '1';
+      }
+    }
+  }, 2500);
 </script>
 </body>
 </html>
