@@ -4,6 +4,14 @@
 *.avi
 *.webm
 
+# Imagens originais — substituídas por WebP
+imagens/*.jpg
+imagens/*.jpeg
+imagens/*.png
+imagens/*.JPG
+imagens/*.PNG
+plantas/*.jpg
+
 # Arquivos temporários do sistema
 .DS_Store
 Thumbs.db
