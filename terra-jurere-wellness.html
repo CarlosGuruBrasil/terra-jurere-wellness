@@ -223,8 +223,14 @@
 
     /* LOCALIZAÇÃO */
     .localizacao{background:var(--white)}
-    .loc-map{border-radius:var(--r-lg);overflow:hidden;aspect-ratio:16/7;box-shadow:var(--shadow)}
+    .loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;margin-top:16px}
+    .loc-map{border-radius:var(--r-md);overflow:hidden;aspect-ratio:4/3;box-shadow:var(--shadow)}
     .loc-map iframe{width:100%;height:100%;border:none}
+    .loc-address{margin-top:12px;padding:14px 16px;background:var(--olive-pale);border-radius:var(--r-sm);font-size:0.85rem;color:var(--olive);font-weight:500;display:flex;align-items:center;gap:8px}
+    .loc-3d{position:relative;border-radius:var(--r-md);overflow:hidden;aspect-ratio:4/3;box-shadow:var(--shadow)}
+    .loc-3d img{width:100%;height:100%;object-fit:cover;display:block}
+    .loc-3d-badge{position:absolute;top:14px;left:14px;background:rgba(74,93,58,0.9);backdrop-filter:blur(8px);color:#fff;font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:5px 12px;border-radius:50px;z-index:2}
+    .loc-benefits-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
     .loc-benefits{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
     .loc-item{display:flex;align-items:center;gap:10px;padding:13px 15px;background:var(--cream);border-radius:var(--r-sm);border:1px solid var(--border);font-size:0.87rem;font-weight:500}
     .loc-item span:first-child{font-size:1.2rem;min-width:24px}
@@ -362,8 +368,10 @@
     .plantas-sidebar::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
     .plantas-thumb-item{border-radius:var(--r-sm);overflow:hidden;cursor:pointer;border:2px solid transparent;transition:border-color var(--ease),opacity var(--ease);aspect-ratio:4/3;background:var(--white)}
     .plantas-thumb-item img{width:100%;height:100%;object-fit:contain;padding:4px}
+    .plantas-thumb-item{position:relative}
     .plantas-thumb-item.active{border-color:var(--olive)}
     .plantas-thumb-item:hover{border-color:var(--sand)}
+    .thumb-lbl{position:absolute;bottom:0;left:0;right:0;background:rgba(74,93,58,0.88);color:#fff;font-size:0.62rem;font-weight:600;text-align:center;padding:3px 4px;letter-spacing:0.03em}
     .plantas-fullscreen-hint{text-align:center;margin-top:10px;font-size:0.75rem;color:var(--muted);display:flex;align-items:center;justify-content:center;gap:6px}
 
     @media(max-width:920px){
@@ -841,14 +849,14 @@
     </div>
     <div class="plantas-viewer" data-aos="fade-up" data-aos-delay="100">
       <div>
-        <div class="plantas-main-wrap" onclick="openLbSrc(plantasData[plantaIdx],'Planta — Terrá Jurerê Wellness')">
+        <div class="plantas-main-wrap" onclick="openLbSrc(plantasData[plantaIdx].src,plantasData[plantaIdx].unit)">
           <img id="plantaMainImg" src="plantas/1.webp" alt="Planta" />
           <div class="plantas-nav-arrows">
             <button class="plantas-arr" onclick="event.stopPropagation();navPlanta(-1)">&#8249;</button>
             <button class="plantas-arr" onclick="event.stopPropagation();navPlanta(1)">&#8250;</button>
           </div>
         </div>
-        <div class="plantas-counter" id="plantaCounter">1 / 15</div>
+        <div class="plantas-counter" id="plantaCounter"><strong>Apto 204-205</strong> <span style="color:var(--muted);font-weight:400">· 1 Suíte + 1 Dorm · Garden</span> <span style="margin-left:8px;opacity:0.5">1/15</span></div>
         <div class="plantas-fullscreen-hint">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg>
           Clique na planta para ampliar
@@ -856,20 +864,20 @@
       </div>
       <div class="plantas-sidebar" id="plantasSidebar">
         <div class="plantas-thumb-item active" onclick="setPlanta(0)"><img src="plantas/1.webp" alt="Planta 1" loading="lazy" /></div>
-        <div class="plantas-thumb-item" onclick="setPlanta(1)"><img src="plantas/2.webp" alt="Planta 2" loading="lazy" /></div>
-        <div class="plantas-thumb-item" onclick="setPlanta(2)"><img src="plantas/3.webp" alt="Planta 3" loading="lazy" /></div>
-        <div class="plantas-thumb-item" onclick="setPlanta(3)"><img src="plantas/4.webp" alt="Planta 4" loading="lazy" /></div>
-        <div class="plantas-thumb-item" onclick="setPlanta(4)"><img src="plantas/5.webp" alt="Planta 5" loading="lazy" /></div>
-        <div class="plantas-thumb-item" onclick="setPlanta(5)"><img src="plantas/6.webp" alt="Planta 6" loading="lazy" /></div>
-        <div class="plantas-thumb-item" onclick="setPlanta(6)"><img src="plantas/7.webp" alt="Planta 7" loading="lazy" /></div>
-        <div class="plantas-thumb-item" onclick="setPlanta(7)"><img src="plantas/8.webp" alt="Planta 8" loading="lazy" /></div>
-        <div class="plantas-thumb-item" onclick="setPlanta(8)"><img src="plantas/9.webp" alt="Planta 9" loading="lazy" /></div>
-        <div class="plantas-thumb-item" onclick="setPlanta(9)"><img src="plantas/10.webp" alt="Planta 10" loading="lazy" /></div>
-        <div class="plantas-thumb-item" onclick="setPlanta(10)"><img src="plantas/11.webp" alt="Planta 11" loading="lazy" /></div>
-        <div class="plantas-thumb-item" onclick="setPlanta(11)"><img src="plantas/12.webp" alt="Planta 12" loading="lazy" /></div>
-        <div class="plantas-thumb-item" onclick="setPlanta(12)"><img src="plantas/13.webp" alt="Planta 13" loading="lazy" /></div>
-        <div class="plantas-thumb-item" onclick="setPlanta(13)"><img src="plantas/14.webp" alt="Planta 14" loading="lazy" /></div>
-        <div class="plantas-thumb-item" onclick="setPlanta(14)"><img src="plantas/15.webp" alt="Planta 15" loading="lazy" /></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(1)" title="Apto 209"><img src="plantas/2.webp" alt="Apto 209" loading="lazy" /><div class="thumb-lbl">209</div></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(2)" title="Apto 301-302"><img src="plantas/3.webp" alt="Apto 301-302" loading="lazy" /><div class="thumb-lbl">301-302</div></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(3)" title="Apto 303-304"><img src="plantas/4.webp" alt="Apto 303-304" loading="lazy" /><div class="thumb-lbl">303-304</div></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(4)" title="Apto 305-310"><img src="plantas/5.webp" alt="Apto 305-310" loading="lazy" /><div class="thumb-lbl">305-310</div></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(5)" title="Apto 312-313"><img src="plantas/6.webp" alt="Apto 312-313" loading="lazy" /><div class="thumb-lbl">312-313</div></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(6)" title="Apto 316-320"><img src="plantas/7.webp" alt="Apto 316-320" loading="lazy" /><div class="thumb-lbl">316-320</div></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(7)" title="Apto 512"><img src="plantas/8.webp" alt="Apto 512" loading="lazy" /><div class="thumb-lbl">512</div></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(8)" title="Apto 612-613"><img src="plantas/9.webp" alt="Apto 612-613" loading="lazy" /><div class="thumb-lbl">612-613</div></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(9)" title="Apto 701-702"><img src="plantas/10.webp" alt="Apto 701-702" loading="lazy" /><div class="thumb-lbl">701-702</div></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(10)" title="Apto 712-713"><img src="plantas/11.webp" alt="Apto 712-713" loading="lazy" /><div class="thumb-lbl">712-713</div></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(11)" title="Apto 801-802"><img src="plantas/12.webp" alt="Apto 801-802" loading="lazy" /><div class="thumb-lbl">801-802</div></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(12)" title="Apto 808-810"><img src="plantas/13.webp" alt="Apto 808-810" loading="lazy" /><div class="thumb-lbl">808-810</div></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(13)" title="Apto 901-905"><img src="plantas/14.webp" alt="Apto 901-905" loading="lazy" /><div class="thumb-lbl">901-905</div></div>
+        <div class="plantas-thumb-item" onclick="setPlanta(14)" title="Apto 906-910"><img src="plantas/15.webp" alt="Apto 906-910" loading="lazy" /><div class="thumb-lbl">906-910</div></div>
       </div>
     </div>
   </div>
@@ -905,13 +913,28 @@
 <!-- LOCALIZAÇÃO -->
 <section class="localizacao" id="localizacao">
   <div class="container">
-    <div class="two-col">
-      <div data-aos="fade-right">
-        <span class="sec-eye">Localização</span>
-        <h2 class="sec-title">Viva o melhor de <em>Jurerê</em></h2>
-        <div class="divider"></div>
-        <p class="sec-text">O Terrá está em Jurerê, um dos bairros mais valorizados e desejados de Florianópolis. Mas sua proposta vai além da localização.</p>
-        <div class="loc-benefits">
+    <div style="text-align:center;max-width:700px;margin:0 auto" data-aos="fade-up">
+      <span class="sec-eye">Localização</span>
+      <h2 class="sec-title">Viva o melhor de <em>Jurerê</em></h2>
+      <div class="divider" style="margin:22px auto"></div>
+      <p class="sec-text" style="margin:0 auto;text-align:center">O Terrá está localizado na R. das Piraúnas, 8 — Jurerê Leste, Florianópolis. Um dos endereços mais valorizados de Santa Catarina.</p>
+    </div>
+    <div class="loc-grid">
+      <!-- Mapa real -->
+      <div data-aos="fade-right" data-aos-delay="100">
+        <div class="loc-map">
+          <iframe
+            src="https://maps.google.com/maps?q=R.+das+Pira%C3%BAnas%2C+8%2C+Jurerê+Leste%2C+Florianópolis%2C+SC%2C+88053-418&output=embed&hl=pt-BR"
+            allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Terrá Jurerê — R. das Piraúnas, 8">
+          </iframe>
+        </div>
+        <div class="loc-address">
+          <span>📍</span>
+          <span>R. das Piraúnas, 8 — Jurerê Leste, Florianópolis - SC · CEP 88053-418</span>
+        </div>
+        <div class="loc-benefits-grid" style="margin-top:14px">
           <div class="loc-item"><span>🏖️</span><span>Próximo da praia</span></div>
           <div class="loc-item"><span>🌳</span><span>Natureza permanente</span></div>
           <div class="loc-item"><span>🏪</span><span>Infraestrutura completa</span></div>
@@ -920,9 +943,15 @@
           <div class="loc-item"><span>📈</span><span>Alta valorização</span></div>
         </div>
       </div>
-      <div data-aos="fade-left" data-aos-delay="150">
-        <div class="loc-map">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3536.2!2d-48.5400!3d-27.4650!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x952386e7c07c1ab7%3A0xf43fb5cb5d4ac5e5!2sJurer%C3%AA%2C%20Florian%C3%B3polis%20-%20SC!5e0!3m2!1spt-BR!2sbr!4v1700000000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Jurerê, Florianópolis"></iframe>
+      <!-- Vista 3D -->
+      <div data-aos="fade-left" data-aos-delay="200">
+        <div class="loc-3d" onclick="openLbSrc('imagens/KOTA_PLA_TER_FACHADA%20AEREA_4K.webp','Vista Aérea — Terrá Jurerê Wellness')" style="cursor:pointer">
+          <div class="loc-3d-badge">🛩️ Vista Aérea 3D</div>
+          <img src="imagens/KOTA_PLA_TER_FACHADA%20AEREA_4K.webp" alt="Vista aérea 3D — Terrá Jurerê Wellness" loading="lazy" />
+        </div>
+        <div class="loc-address" style="margin-top:12px">
+          <span>🏗️</span>
+          <span>Render 3D do empreendimento — clique para ampliar</span>
         </div>
       </div>
     </div>
@@ -1166,19 +1195,37 @@
   document.addEventListener('keydown',e=>{if(e.key==='Escape'&&vidModal.classList.contains('open'))closeVid();});
 
   /* PLANTAS VIEWER */
-  const plantasData=['plantas/1.webp','plantas/2.webp','plantas/3.webp','plantas/4.webp','plantas/5.webp','plantas/6.webp','plantas/7.webp','plantas/8.webp','plantas/9.webp','plantas/10.webp','plantas/11.webp','plantas/12.webp','plantas/13.webp','plantas/14.webp','plantas/15.webp'];
+  const plantasData=[
+    {src:'plantas/1.webp',  unit:'Apto 204-205', tipo:'1 Suíte + 1 Dorm · Garden'},
+    {src:'plantas/2.webp',  unit:'Apto 209',     tipo:'1 Suíte + 1 Dormitório'},
+    {src:'plantas/3.webp',  unit:'Apto 301-302', tipo:'3 Suítes'},
+    {src:'plantas/4.webp',  unit:'Apto 303-304', tipo:'1 Dorm · 1 Suíte + 1 Dorm'},
+    {src:'plantas/5.webp',  unit:'Apto 305-310', tipo:'1 Dorm · 1 Suíte + 1 Dorm'},
+    {src:'plantas/6.webp',  unit:'Apto 312-313', tipo:'3 Suítes'},
+    {src:'plantas/7.webp',  unit:'Apto 316-320', tipo:'2 Suítes'},
+    {src:'plantas/8.webp',  unit:'Apto 512',     tipo:'3 Suítes · Garden'},
+    {src:'plantas/9.webp',  unit:'Apto 612-613', tipo:'2-3 Suítes · Garden'},
+    {src:'plantas/10.webp', unit:'Apto 701-702', tipo:'1 Suíte + 2 Dormitórios'},
+    {src:'plantas/11.webp', unit:'Apto 712-713', tipo:'2-3 Suítes · Garden'},
+    {src:'plantas/12.webp', unit:'Apto 801-802', tipo:'2 Suítes'},
+    {src:'plantas/13.webp', unit:'Apto 808-810', tipo:'2 Suítes · Garden'},
+    {src:'plantas/14.webp', unit:'Apto 901-905', tipo:'3 Suítes · Garden | 2 Suítes'},
+    {src:'plantas/15.webp', unit:'Apto 906-910', tipo:'3 Suítes | 1 Suíte + 2 Dorm'},
+  ];
   let plantaIdx=0;
   const plantaMainImg=document.getElementById('plantaMainImg');
   const plantaCounter=document.getElementById('plantaCounter');
   const plantaThumbs=document.querySelectorAll('.plantas-thumb-item');
   function setPlanta(idx){
     plantaIdx=idx;
+    const p=plantasData[idx];
     plantaMainImg.classList.add('fade');
+    plantaMainImg.alt=p.unit;
     setTimeout(()=>{
-      plantaMainImg.src=plantasData[idx];
+      plantaMainImg.src=p.src;
       plantaMainImg.classList.remove('fade');
     },200);
-    plantaCounter.textContent=(idx+1)+' / '+plantasData.length;
+    plantaCounter.innerHTML='<strong>'+p.unit+'</strong> <span style="color:var(--muted);font-weight:400">· '+p.tipo+'</span> <span style="margin-left:8px;opacity:0.5">'+( idx+1)+'/'+plantasData.length+'</span>';
     plantaThumbs.forEach((t,i)=>t.classList.toggle('active',i===idx));
     plantaThumbs[idx].scrollIntoView({behavior:'smooth',block:'nearest',inline:'nearest'});
   }
