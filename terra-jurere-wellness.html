@@ -47,8 +47,8 @@
       --ease:       0.4s cubic-bezier(0.25,0.46,0.45,0.94);
     }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth;font-size:16px}
-    body{font-family:var(--sans);background:var(--cream);color:var(--text);overflow-x:hidden;line-height:1.7}
+    html{scroll-behavior:smooth;font-size:16px;overflow-x:hidden;max-width:100%}
+    body{font-family:var(--sans);background:var(--cream);color:var(--text);overflow-x:hidden;max-width:100%;line-height:1.7}
     img{max-width:100%;display:block}
     a{text-decoration:none;color:inherit}
 
@@ -311,7 +311,7 @@
     @keyframes pulse-wpp{0%,100%{box-shadow:0 6px 24px rgba(37,211,102,0.42)}50%{box-shadow:0 6px 36px rgba(37,211,102,0.65),0 0 0 10px rgba(37,211,102,0.08)}}
 
     /* MOBILE STICKY */
-    .mob-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:998;padding:10px 12px;background:var(--olive);grid-template-columns:1fr 1fr;gap:8px}
+    .mob-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:998;padding:10px 12px;padding-bottom:calc(10px + env(safe-area-inset-bottom, 0px));background:var(--olive);grid-template-columns:1fr 1fr;gap:8px}
     .mob-btn{display:flex;align-items:center;justify-content:center;gap:5px;padding:12px;border-radius:var(--r-sm);font-size:0.78rem;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:#fff}
     .mob-btn.f{background:var(--gold)}.mob-btn.w{background:#25D366}
 
@@ -381,8 +381,9 @@
       .areas-grid{grid-template-columns:repeat(2,1fr)}
       .vid-grid{grid-template-columns:repeat(2,1fr)}
       .plantas-viewer{grid-template-columns:1fr}
-      .plantas-sidebar{flex-direction:row;max-height:none;overflow-x:auto;overflow-y:visible;padding-right:0;padding-bottom:4px}
+      .plantas-sidebar{flex-direction:row;max-height:none;overflow-x:auto;overflow-y:visible;padding-right:0;padding-bottom:4px;-webkit-overflow-scrolling:touch}
       .plantas-thumb-item{min-width:100px;flex:0 0 100px}
+      .plantas-main-wrap{min-height:380px}
     }
     @media(max-width:900px){
       section{padding:72px 5%}
@@ -405,7 +406,13 @@
       .fachada-mini-grid{grid-template-columns:1fr}
       .wpp{display:none}
       .mob-bar{display:grid}
-      body{padding-bottom:68px}
+      body{padding-bottom:calc(68px + env(safe-area-inset-bottom, 0px))}
+      .form-wrap{padding:24px;border-radius:var(--r-md)}
+      .fg input, .fg select{font-size:16px}
+      .emp-divider{display:none}
+      .pdf-banner img{min-height:380px}
+      .plantas-main-wrap{min-height:280px;border-radius:var(--r-md)}
+      .plantas-main-wrap img{max-height:250px;padding:8px}
     }
   </style>
 </head>
@@ -1009,7 +1016,7 @@
         <div class="emp-box"><span>Grupo Maier</span></div>
         <span class="emp-caption">Incorporadora</span>
       </div>
-      <div style="width:1px;height:60px;background:var(--border)"></div>
+      <div class="emp-divider" style="width:1px;height:60px;background:var(--border)"></div>
       <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
         <div class="emp-box"><span>Planner</span></div>
         <span class="emp-caption">Construtora</span>
