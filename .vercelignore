@@ -1,0 +1,19 @@
+# Vídeos — hospedados no YouTube
+*.mp4
+*.mov
+*.avi
+*.webm
+
+# PDF original
+*.pdf
+
+# Sistema
+.DS_Store
+
+# Arquivos legados
+index.html
+script.js
+styles.css
+
+# Vídeo hero comprimido (backup local)
+hero-video.mp4
