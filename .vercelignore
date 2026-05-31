@@ -1,5 +1,7 @@
-# Vídeos — hospedados no YouTube
+# Vídeos originais pesados (raiz) — ignorar
 *.mp4
+!hero-video.mp4
+!videos/*.mp4
 *.mov
 *.avi
 *.webm
@@ -15,5 +17,3 @@ script.js
 styles.css
 terra-jurere-wellness.html
 
-# Vídeo hero comprimido (backup local)
-hero-video.mp4
