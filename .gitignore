@@ -25,3 +25,6 @@ Thumbs.db
 # Arquivos legados (não usados no site novo)
 script.js
 styles.css
+
+# Permitir imagem Open Graph otimizada
+!imagens/og-image.jpg
