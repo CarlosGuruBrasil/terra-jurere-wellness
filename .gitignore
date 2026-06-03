@@ -30,3 +30,6 @@ styles.css
 
 # Permitir imagem Open Graph otimizada
 !imagens/og-image.jpg
+
+# Pasta de outros aplicativos (como o OpenSquad)
+meus aplicativos/
