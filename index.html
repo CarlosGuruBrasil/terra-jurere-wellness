@@ -514,7 +514,7 @@
 
   <!-- Right: CTA + Hamburger -->
   <div class="nav-right">
-    <a href="#formulario" class="nav-cta" onclick="pixel('Lead',{content_name:'CTA',content_category:'navbar'})">
+    <a href="#formulario" class="nav-cta" onclick="pixel('ViewContent',{content_name:'CTA_Rolagem',content_category:'navbar'})">
       Receber Material
     </a>
     <button class="nav-hamburger" id="navHamburger" aria-label="Abrir menu">
@@ -531,7 +531,7 @@
   <a href="#plantas" class="nav-mobile-link" onclick="closeMob()">Plantas</a>
   <a href="#tipologias" class="nav-mobile-link" onclick="closeMob()">Tipologias</a>
   <a href="#localizacao" class="nav-mobile-link" onclick="closeMob()">Localização</a>
-  <a href="#formulario" class="nav-mobile-cta" onclick="closeMob();pixel('Lead',{content_name:'CTA',content_category:'mobile-menu'})">
+  <a href="#formulario" class="nav-mobile-cta" onclick="closeMob();pixel('ViewContent',{content_name:'CTA_Rolagem',content_category:'mobile-menu'})">
     👉 Receber Material Completo
   </a>
 </div>
@@ -548,7 +548,7 @@
     <h1 class="hero-title">Terrá Jurerê<br><em>Wellness</em></h1>
     <p class="hero-sub">Um novo jeito de viver em Jurerê</p>
     <p class="hero-desc">Arquitetura autoral, bem-estar, natureza e exclusividade em um dos endereços mais desejados de Florianópolis.</p>
-    <a href="#formulario" class="btn-gold" onclick="pixel('Lead',{content_name:'CTA',content_category:'hero'})">
+    <a href="#formulario" class="btn-gold" onclick="pixel('ViewContent',{content_name:'CTA_Rolagem',content_category:'hero'})">
       Quero Receber o Material Completo
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </a>
@@ -642,7 +642,7 @@
   <div class="pdf-banner-overlay">
     <span class="pdf-banner-eye">Lançamento Exclusivo</span>
     <h2 class="pdf-banner-title">Uma nova referência<br>em <em>bem-estar e arquitetura</em></h2>
-    <a href="#formulario" class="pdf-banner-cta" onclick="pixel('Lead',{content_name:'CTA',content_category:'pdf-banner'})">
+    <a href="#formulario" class="pdf-banner-cta" onclick="pixel('ViewContent',{content_name:'CTA_Rolagem',content_category:'pdf-banner'})">
       Quero Receber o Material Completo
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </a>
@@ -1204,7 +1204,7 @@
 
 <!-- MOBILE STICKY -->
 <div class="mob-bar">
-  <a class="mob-btn f" href="#formulario" onclick="pixel('Lead',{content_name:'CTA',content_category:'mobile-sticky'})">📋 Ver Material</a>
+  <a class="mob-btn f" href="#formulario" onclick="pixel('ViewContent',{content_name:'CTA_Rolagem',content_category:'mobile-sticky'})">📋 Ver Material</a>
   <a class="mob-btn w" href="https://wa.me/5548998084284?text=Olá!%20Tenho%20interesse%20no%20Terrá%20Jurerê%20Wellness." target="_blank" rel="noopener noreferrer" onclick="pixel('Contact',{content_name:'WhatsApp',content_category:'mobile-sticky'})">💬 WhatsApp</a>
 </div>
 
@@ -1232,8 +1232,14 @@
     if(!nav.contains(e.target)&&!navMobile.contains(e.target)) closeMob();
   });
 
-  /* META PIXEL HELPER */
-  function pixel(ev,params){if(typeof fbq!=='undefined')fbq('track',ev,params||{});}
+  /* META PIXEL HELPER WITH DEDUPLICATION */
+  function pixel(ev,params,options){if(typeof fbq!=='undefined')fbq('track',ev,params||{},options||{});}
+  function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+    return null;
+  }
 
   /* PHONE MASK */
   document.getElementById('tel').addEventListener('input',function(){
@@ -1283,6 +1289,7 @@
     vidModal.classList.add('open');
     modalVideo.play().catch(()=>{});
     pixel('ViewContent',{content_name:'Video',content_category:videoSrc});
+    pixel('VideoPlay',{content_name:'Video Play',content_category:videoSrc});
   }
   function closeVid(){
     modalVideo.pause();
@@ -1326,6 +1333,13 @@
     plantaCounter.innerHTML='<strong>'+p.unit+'</strong> <span style="color:var(--muted);font-weight:400">· '+p.tipo+'</span> <span style="margin-left:8px;opacity:0.5">'+( idx+1)+'/'+plantasData.length+'</span>';
     plantaThumbs.forEach((t,i)=>t.classList.toggle('active',i===idx));
     plantaThumbs[idx].scrollIntoView({behavior:'smooth',block:'nearest',inline:'nearest'});
+    
+    // Rastrear visualização única da planta por sessão
+    if (typeof window.plantsTracked === 'undefined') window.plantsTracked = {};
+    if (!window.plantsTracked[p.unit]) {
+      window.plantsTracked[p.unit] = true;
+      pixel('ViewContent', { content_name: 'Visualização de Planta', content_category: p.unit });
+    }
   }
   function navPlanta(dir){setPlanta((plantaIdx+dir+plantasData.length)%plantasData.length);}
   document.addEventListener('keydown',e=>{
@@ -1338,7 +1352,7 @@
     }
   });
 
-  /* FORM SUBMIT */
+  /* FORM SUBMIT WITH CONVERSIONS API */
   let formStarted=false;
   document.getElementById('leadForm').addEventListener('focusin',()=>{if(!formStarted){formStarted=true;pixel('InitiateCheckout',{content_name:'Form Start'});}});
   document.getElementById('leadForm').addEventListener('submit',function(e){
@@ -1348,7 +1362,34 @@
     const email=document.getElementById('email').value.trim();
     const interesse=document.getElementById('interesse').value;
     if(!nome||!tel||!email){alert('Por favor, preencha nome, WhatsApp e e-mail.');return;}
-    pixel('Lead',{content_name:'Terra Jurere Wellness — Lead',content_category:interesse||'não informado'});
+    
+    // Gera ID único do evento para deduplicação entre Pixel (Navegador) e API (Servidor)
+    const eventId = 'lead_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    
+    // 1. Enviar evento de navegador (Pixel)
+    pixel('Lead', {
+      content_name: 'Terra Jurere Wellness — Lead',
+      content_category: interesse || 'não informado'
+    }, { eventID: eventId });
+    
+    // 2. Enviar evento de servidor (API de Conversões da Meta)
+    fetch('/api/lead', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        nome: nome,
+        tel: tel,
+        email: email,
+        interesse: interesse,
+        eventId: eventId,
+        fbp: getCookie('_fbp'),
+        fbc: getCookie('_fbc'),
+        eventUrl: window.location.href
+      })
+    }).catch(err => console.error('Erro na API de Conversões:', err));
+
     const msg=encodeURIComponent(`Olá! Me chamo ${nome} e tenho interesse no Terrá Jurerê Wellness.\nTipologia: ${interesse||'não informado'}\nE-mail: ${email}\nGostaria de receber o material completo.`);
     window.open(`https://wa.me/5548998084284?text=${msg}`,'_blank');
     document.getElementById('formContent').style.display='none';
@@ -1375,6 +1416,43 @@
       }
     }
   }, 2500);
+
+  /* ENGAGEMENT & RETARGETING EVENTS */
+  // 1. Rastreamento de Rolagem (Scroll Depth)
+  let scroll50 = false;
+  let scroll90 = false;
+  window.addEventListener('scroll', () => {
+    const s = window.scrollY + window.innerHeight;
+    const h = document.documentElement.scrollHeight;
+    const pct = (s / h) * 100;
+    if (pct >= 50 && !scroll50) {
+      scroll50 = true;
+      pixel('Scroll_50', { content_name: 'Rolou 50%' });
+    }
+    if (pct >= 90 && !scroll90) {
+      scroll90 = true;
+      pixel('Scroll_90', { content_name: 'Rolou 90%' });
+    }
+  });
+
+  // 2. Tempo de Permanência Ativa (Time on Page)
+  setTimeout(() => {
+    pixel('TimeOnPage_30s', { content_name: 'Ativo 30s' });
+  }, 30000);
+  setTimeout(() => {
+    pixel('TimeOnPage_60s', { content_name: 'Ativo 60s' });
+  }, 60000);
+
+  // 3. Rastreamento Geral de Links de WhatsApp
+  document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
+    link.addEventListener('click', function() {
+      const href = this.getAttribute('href');
+      let cat = 'footer_or_header';
+      if (this.classList.contains('wpp')) cat = 'floating';
+      else if (this.classList.contains('w')) cat = 'mobile-sticky';
+      pixel('Contact', { content_name: 'Clique WhatsApp', content_category: cat });
+    });
+  });
 </script>
 </body>
 </html>
