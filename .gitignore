@@ -1,6 +1,7 @@
 # Vídeos — hospedados no YouTube (muito grandes para Git)
 *.mp4
 !hero-video.mp4
+!videos/*.mp4
 *.mov
 *.avi
 *.webm
