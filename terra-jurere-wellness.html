@@ -67,7 +67,7 @@
     .nav.s{background:rgba(255,255,255,0.96);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 1px 0 rgba(0,0,0,0.07),0 4px 24px rgba(0,0,0,0.06)}
     /* Brand / Logo */
     .nav-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-    .nav-brand-logo{height:38px;width:auto;object-fit:contain;filter:brightness(0) invert(1);transition:filter var(--ease)}
+    .nav-brand-logo{height:50px;width:auto;object-fit:contain;filter:brightness(0) invert(1);transition:filter var(--ease)}
     .nav.s .nav-brand-logo{filter:brightness(0)}
     .nav-brand-text{display:flex;flex-direction:column;line-height:1;gap:3px}
     .nav-brand-main{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:#fff;letter-spacing:0.01em;transition:color var(--ease)}
@@ -446,6 +446,7 @@
     @media(max-width:920px){
       .nav-links{display:none}
       .nav-hamburger{display:flex}
+      .nav-brand-logo{height:38px}
     }
     @media(max-width:1100px){
       .areas-grid{grid-template-columns:repeat(2,1fr)}
